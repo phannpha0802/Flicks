@@ -1,0 +1,21 @@
+package com.kh.flicks.movie.streaming.ui.app
+
+import android.annotation.SuppressLint
+import android.os.Bundle
+import android.view.View
+import androidx.fragment.app.Fragment
+import com.kh.flicks.movie.streaming.R
+import com.kh.flicks.movie.streaming.databinding.FragmentSearchBinding
+
+class SearchFragment : Fragment(R.layout.fragment_search) {
+	private lateinit var binding: FragmentSearchBinding
+
+	@SuppressLint("SetTextI18n")
+	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+		super.onViewCreated(view, savedInstanceState)
+		binding = FragmentSearchBinding.bind(view)
+
+		// TODO: code here.
+		binding.tvText.text = "Search Page"
+	}
+}

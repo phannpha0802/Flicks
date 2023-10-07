@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools">
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="@color/dark_color"
+		tools:context=".ui.auth.SplashActivity">
+
+		<!--		container detail start-->
+		<LinearLayout
+			android:id="@+id/containerDetailSplashActivity"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:background="@drawable/container_detail_splash_bg"
+			android:orientation="vertical"
+			android:paddingHorizontal="16dp"
+			android:paddingVertical="12sp"
+			app:layout_constraintBottom_toTopOf="@id/pandaAnimationSplashActivity"
+			app:layout_constraintEnd_toEndOf="@id/pandaAnimationSplashActivity"
+			app:layout_constraintStart_toStartOf="@id/pandaAnimationSplashActivity">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:fontFamily="@font/montserrat_regular"
+				android:text="@string/hello"
+				android:textColor="@color/blue_accent_color"
+				android:textSize="12sp"
+				android:textStyle="normal" />
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="3dp"
+				android:fontFamily="@font/montserrat_regular"
+				android:text="@string/into_the_flicks"
+				android:textColor="@color/red_color"
+				android:textSize="12sp"
+				android:textStyle="normal" />
+		</LinearLayout>
+		<!--		container detail end-->
+
+		<!--		panda animation start-->
+		<com.airbnb.lottie.LottieAnimationView
+			android:id="@+id/pandaAnimationSplashActivity"
+			android:layout_width="0dp"
+			android:layout_height="0dp"
+			android:layout_centerInParent="true"
+			android:layout_marginBottom="32dp"
+			android:scaleType="centerCrop"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintHeight_percent="0.2"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintWidth_percent="0.3"
+			app:lottie_autoPlay="true"
+			app:lottie_loop="true"
+			app:lottie_rawRes="@raw/panda_popcorn_animation" />
+		<!--		panda animation end-->
+
+		<!--		loading animation start-->
+		<com.airbnb.lottie.LottieAnimationView
+			android:id="@+id/loadingAnimationSplashActivity"
+			android:layout_width="0dp"
+			android:layout_height="0dp"
+			android:layout_centerInParent="true"
+			android:layout_marginBottom="12dp"
+			android:scaleType="centerCrop"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintHeight_percent="0.01"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintWidth_percent="0.1"
+			app:lottie_autoPlay="true"
+			app:lottie_loop="true"
+			app:lottie_rawRes="@raw/loading_animation" />
+		<!--		loading animation end-->
+	</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,20 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+	<!-- Base application theme. -->
+	<style name="Base.Theme.Flicks" parent="Theme.Material3.DayNight.NoActionBar">
+		<!-- Customize your dark theme here. -->
+		<!-- Primary brand color. -->
+		<item name="colorPrimary">@color/dark_color</item>
+		<item name="colorPrimaryVariant">@color/soft_color</item>
+		<item name="colorOnPrimary">@color/blue_accent_color</item>
+		<!-- Secondary brand color. -->
+		<item name="colorSecondary">@color/green_color</item>
+		<item name="colorSecondaryVariant">@color/orange_color</item>
+		<item name="colorOnSecondary">@color/red_color</item>
+		<!-- Status bar color. -->
+		<item name="android:statusBarColor">@color/dark_color</item>
+		<item name="android:navigationBarColor">@color/dark_color</item>
+
+		<!--default font family-->
+		<item name="fontFamily">@font/montserrat_medium</item>
+	</style>
+</resources>

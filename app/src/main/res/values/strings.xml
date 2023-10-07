@@ -1,0 +1,15 @@
+<resources>
+	<string name="app_name">Flicks</string>
+
+	<!--	string main menu start-->
+	<string name="home">Home</string>
+	<string name="search">Search</string>
+	<string name="download">Download</string>
+	<string name="profile">Profile</string>
+	<!--	string main menu end-->
+
+	<!--	string splash activity start-->
+	<string name="hello">Hello</string>
+	<string name="into_the_flicks">into the Flicks!</string>
+	<!--	string splash activity end-->
+</resources>

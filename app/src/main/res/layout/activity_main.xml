@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools">
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="@color/dark_color"
+		tools:context=".MainActivity">
+
+		<!--		fragment container start-->
+		<androidx.fragment.app.FragmentContainerView
+			android:id="@+id/fragmentContainerViewMainActivity"
+			android:layout_width="match_parent"
+			android:layout_height="0dp"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintHeight_percent="0.9"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent" />
+		<!--		fragment container end-->
+
+		<!--		bottom navigation bar start-->
+		<me.ibrahimsn.lib.SmoothBottomBar
+			android:id="@+id/bottomNavigationBarMainActivity"
+			android:layout_width="match_parent"
+			android:layout_height="0dp"
+			app:backgroundColor="@color/soft_color"
+			app:iconSize="22dp"
+			app:iconTint="@color/grey_color"
+			app:iconTintActive="@color/blue_accent_color"
+			app:itemFontFamily="@font/montserrat_regular"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintHeight_percent="0.1"
+			app:layout_constraintStart_toStartOf="parent"
+			app:menu="@menu/main_menu"
+			app:textColor="@color/blue_accent_color" />
+		<!--		bottom navigation bar end-->
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
