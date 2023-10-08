@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
 
 	private fun bottomNavigationBarItemSelected() {
 		//default screen
-		val homeFragment = HomeFragment()
+		val homeFragment = HomeFragment(this@MainActivity)
 		setFragment(homeFragment)
 
 		binding.bottomNavigationBarMainActivity.onItemSelected = {

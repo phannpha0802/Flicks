@@ -4,21 +4,195 @@
 	xmlns:tools="http://schemas.android.com/tools">
 
 	<androidx.constraintlayout.widget.ConstraintLayout
+		android:id="@+id/mainContainerHomeFragment"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		android:background="@color/dark_color"
 		tools:context=".ui.app.HomeFragment">
 
-		<TextView
-			android:id="@+id/tvText"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			tools:text="Home Page"
-			android:textColor="@color/white_color"
-			app:layout_constraintBottom_toBottomOf="parent"
+		<!--		AppBar layout start-->
+		<LinearLayout
+			android:id="@+id/appBarLayoutHomeFragment"
+			android:layout_width="match_parent"
+			android:layout_height="0dp"
+			android:layout_marginHorizontal="16dp"
+			android:gravity="center_vertical"
+			android:orientation="horizontal"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintHeight_percent="0.1"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent">
+
+			<com.google.android.material.imageview.ShapeableImageView
+				android:id="@+id/profileImageHomeFragment"
+				android:layout_width="48dp"
+				android:layout_height="48dp"
+				android:scaleType="centerCrop"
+				android:src="@drawable/not_found_profile"
+				app:shapeAppearanceOverlay="@style/Circular50" />
+
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="8dp"
+				android:orientation="vertical">
+
+				<TextView
+					android:id="@+id/userNameHomeFragment"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:ellipsize="end"
+					android:ems="14"
+					android:maxLines="1"
+					android:textColor="@color/white_grey_color"
+					android:textSize="14sp"
+					tools:text="Hello, David!" />
+
+				<TextView
+					android:id="@+id/greetingTextHomeFragment"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="4dp"
+					android:ellipsize="end"
+					android:ems="14"
+					android:maxLines="1"
+					android:textColor="@color/dark_grey_color"
+					android:textSize="14sp"
+					tools:text="Let's stream your favorite movies." />
+			</LinearLayout>
+
+			<Space
+				android:layout_width="0dp"
+				android:layout_height="0dp"
+				android:layout_weight="1" />
+
+			<ImageView
+				android:id="@+id/buttonFavoriteHomeFragment"
+				android:layout_width="40dp"
+				android:layout_height="40dp"
+				android:background="@drawable/favorite_bg"
+				android:contentDescription="@null"
+				android:padding="8dp"
+				android:src="@drawable/favorite_icon"
+				app:tint="@color/red_color" />
+
+		</LinearLayout>
+		<!--		AppBar layout end-->
+
+		<!--		Search field start-->
+		<LinearLayout
+			android:id="@+id/containerSearchLayout"
+			android:layout_width="match_parent"
+			android:layout_height="50dp"
+			android:layout_marginHorizontal="16dp"
+			android:layout_marginVertical="12dp"
+			android:background="@drawable/search_field_bg"
+			android:gravity="center_vertical"
+			android:paddingHorizontal="16dp"
+			android:paddingVertical="6dp"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintHeight_percent="0.07"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/appBarLayoutHomeFragment">
+
+			<ImageView
+				android:layout_width="40dp"
+				android:layout_height="40dp"
+				android:contentDescription="@null"
+				android:padding="10dp"
+				android:src="@drawable/search_icon"
+				app:tint="@color/grey_color" />
+
+			<EditText
+				android:id="@+id/searchFieldHomeFragment"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				android:autofillHints="name"
+				android:background="@null"
+				android:hint="@string/search_a_title"
+				android:imeOptions="actionSearch"
+				android:inputType="text"
+				android:maxLength="50"
+				android:paddingHorizontal="8dp"
+				android:textColor="@color/white_color"
+				android:textColorHint="@color/grey_color"
+				android:textSize="14sp" />
+
+			<View
+				android:layout_width="1dp"
+				android:layout_height="match_parent"
+				android:layout_marginHorizontal="2dp"
+				android:layout_marginVertical="10dp"
+				android:background="@color/grey_color" />
+
+			<ImageView
+				android:layout_width="40dp"
+				android:layout_height="40dp"
+				android:contentDescription="@null"
+				android:padding="10dp"
+				android:src="@drawable/filter_icon"
+				app:tint="@color/white_grey_color" />
+		</LinearLayout>
+		<!--		Search field end-->
+
+		<!--		Carousel image start-->
+		<androidx.viewpager2.widget.ViewPager2
+			android:id="@+id/carouselImageSliderHomeFragment"
+			android:layout_width="match_parent"
+			android:layout_height="150dp"
+			android:layout_marginTop="24dp"
+			android:paddingHorizontal="24dp"
 			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintStart_toStartOf="parent"
-			app:layout_constraintTop_toTopOf="parent" />
+			app:layout_constraintTop_toBottomOf="@id/containerSearchLayout" />
+		<!--		Carousel image end-->
+
+		<!--		Dot indicator start-->
+		<com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+			android:id="@+id/dotsIndicatorInHomeFragment"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="12dp"
+			app:dotsColor="@color/blue_accent_color"
+			app:dotsSize="10dp"
+			app:dotsSpacing="4dp"
+			app:layout_constraintEnd_toEndOf="@id/carouselImageSliderHomeFragment"
+			app:layout_constraintStart_toStartOf="@id/carouselImageSliderHomeFragment"
+			app:layout_constraintTop_toBottomOf="@id/carouselImageSliderHomeFragment" />
+		<!--		dot indicator end-->
+
+		<!--		Category list start-->
+		<LinearLayout
+			android:id="@+id/containerCategoryList"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="16dp"
+			android:layout_marginTop="32dp"
+			android:orientation="vertical"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/carouselImageSliderHomeFragment">
+
+			<TextView
+				android:id="@+id/tvCategoryHomeFragment"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:ellipsize="end"
+				android:maxLines="1"
+				android:textColor="@color/white_grey_color"
+				android:textSize="16sp"
+				android:textStyle="bold"
+				tools:text="Categories" />
+
+			<androidx.recyclerview.widget.RecyclerView
+				android:id="@+id/rcCategoryListHomeFragment"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="16dp" />
+		</LinearLayout>
+		<!--		Category list end-->
+
 
 	</androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
