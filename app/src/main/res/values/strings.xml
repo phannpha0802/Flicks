@@ -18,5 +18,6 @@
 	<string name="text_search_not_found">we are sorry, we can not find the movie :(</string>
 	<string name="desc_search_not_found">Find your movie by Type title, categories, years, etc</string>
 	<string name="cancel">Cancel</string>
+	<string name="action">action |</string>
 	<!--	string home fragment end-->
 </resources>

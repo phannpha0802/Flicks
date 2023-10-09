@@ -10,8 +10,8 @@ import com.kh.flicks.movie.streaming.databinding.PopularItemLayoutBinding
 import com.kh.flicks.movie.streaming.extensions.localImage
 import com.kh.flicks.movie.streaming.networks.models.MovieDetail
 
-class PopularItemAdapter(private val context: Activity, private val movie: ArrayList<MovieDetail>) :
-	RecyclerView.Adapter<PopularItemAdapter.ViewHolder>() {
+class MovieAdapter(private val context: Activity, private val movie: ArrayList<MovieDetail>) :
+	RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
 
 	inner class ViewHolder(private val binding: PopularItemLayoutBinding) :
 		RecyclerView.ViewHolder(binding.root) {

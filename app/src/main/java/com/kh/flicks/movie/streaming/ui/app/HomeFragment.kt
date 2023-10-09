@@ -14,7 +14,7 @@ import androidx.viewpager2.widget.MarginPageTransformer
 import com.kh.flicks.movie.streaming.R
 import com.kh.flicks.movie.streaming.adapters.CarouselAdapter
 import com.kh.flicks.movie.streaming.adapters.CategoryAdapter
-import com.kh.flicks.movie.streaming.adapters.PopularItemAdapter
+import com.kh.flicks.movie.streaming.adapters.MovieAdapter
 import com.kh.flicks.movie.streaming.databinding.FragmentHomeBinding
 import com.kh.flicks.movie.streaming.extensions.hideSoftKeyboard
 import com.kh.flicks.movie.streaming.extensions.localImage
@@ -179,7 +179,7 @@ class HomeFragment(private val context: Activity) : Fragment(R.layout.fragment_h
 			)
 		)
 
-		val adapter = PopularItemAdapter(context, list)
+		val adapter = MovieAdapter(context, list)
 		val rcView = binding.rcPopularListHomeFragment
 		rcView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
 		rcView.adapter = adapter

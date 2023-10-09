@@ -66,6 +66,68 @@
 				app:layout_constraintTop_toBottomOf="@id/containerSearchLayout" />
 			<!--		Category list end-->
 
+			<!--		today list start-->
+			<LinearLayout
+				android:id="@+id/containerTodayLayout"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="16dp"
+				android:layout_marginTop="32dp"
+				android:orientation="vertical"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@id/rcCategoryListSearchFragment">
+
+				<TextView
+					android:id="@+id/tvTodaySearchFragment"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:ellipsize="end"
+					android:maxLines="1"
+					android:textColor="@color/white_grey_color"
+					android:textSize="16sp"
+					android:textStyle="bold"
+					tools:text="Today" />
+
+				<androidx.recyclerview.widget.RecyclerView
+					android:id="@+id/rcTodayListSearchFragment"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="16dp" />
+			</LinearLayout>
+			<!--		today list end-->
+
+			<!--		today list start-->
+			<LinearLayout
+				android:id="@+id/containerRecommendLayout"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="16dp"
+				android:layout_marginTop="32dp"
+				android:orientation="vertical"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@id/containerTodayLayout">
+
+				<TextView
+					android:id="@+id/tvRecommendSearchFragment"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:ellipsize="end"
+					android:maxLines="1"
+					android:textColor="@color/white_grey_color"
+					android:textSize="16sp"
+					android:textStyle="bold"
+					tools:text="Recommend for you" />
+
+				<androidx.recyclerview.widget.RecyclerView
+					android:id="@+id/rcRecommendListSearchFragment"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="16dp" />
+			</LinearLayout>
+			<!--		today list end-->
+
 		</androidx.constraintlayout.widget.ConstraintLayout>
 
 	</androidx.core.widget.NestedScrollView>
