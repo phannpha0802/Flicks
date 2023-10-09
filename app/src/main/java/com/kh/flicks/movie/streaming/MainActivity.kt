@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
 				}
 
 				1 -> {
-					setFragment(SearchFragment())
+					setFragment(SearchFragment(this@MainActivity))
 				}
 
 				2 -> {
