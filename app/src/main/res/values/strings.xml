@@ -15,5 +15,8 @@
 
 	<!--	string home fragment start-->
 	<string name="search_a_title">Search a title...</string>
+	<string name="text_search_not_found">we are sorry, we can not find the movie :(</string>
+	<string name="desc_search_not_found">Find your movie by Type title, categories, years, etc</string>
+	<string name="cancel">Cancel</string>
 	<!--	string home fragment end-->
 </resources>
