@@ -19,5 +19,6 @@
 	<string name="desc_search_not_found">Find your movie by Type title, categories, years, etc</string>
 	<string name="cancel">Cancel</string>
 	<string name="action">action |</string>
+	<string name="coming_soon">coming soon!</string>
 	<!--	string home fragment end-->
 </resources>
