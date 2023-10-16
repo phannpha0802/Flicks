@@ -6,11 +6,14 @@ import com.kh.flicks.movie.streaming.networks.models.Carousel
 class CarouselRepo {
 	private val carouselRepo = ArrayList<Carousel>()
 
-	fun addSlider(carousel: Carousel) {
+	fun clearList(){
+		carouselRepo.clear()
+	}
+	fun addCarousel(carousel: Carousel) {
 		carouselRepo.add(carousel)
 	}
 
-	fun getAllSlider(): ArrayList<Carousel> {
+	fun getAllCarousel(): ArrayList<Carousel> {
 		return carouselRepo
 	}
 }

@@ -7,6 +7,8 @@ import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
@@ -14,35 +16,47 @@ import androidx.viewpager2.widget.MarginPageTransformer
 import com.kh.flicks.movie.streaming.R
 import com.kh.flicks.movie.streaming.adapters.CarouselAdapter
 import com.kh.flicks.movie.streaming.adapters.CategoryAdapter
-import com.kh.flicks.movie.streaming.adapters.PopularItemAdapter
+import com.kh.flicks.movie.streaming.adapters.MovieAdapter
 import com.kh.flicks.movie.streaming.databinding.FragmentHomeBinding
 import com.kh.flicks.movie.streaming.extensions.hideSoftKeyboard
 import com.kh.flicks.movie.streaming.extensions.localImage
 import com.kh.flicks.movie.streaming.extensions.autoScroll
-import com.kh.flicks.movie.streaming.extensions.toastMessage
+import com.kh.flicks.movie.streaming.listeners.OnMovieClick
 import com.kh.flicks.movie.streaming.listeners.Onclick
 import com.kh.flicks.movie.streaming.networks.models.Carousel
 import com.kh.flicks.movie.streaming.networks.models.Category
 import com.kh.flicks.movie.streaming.networks.models.MovieDetail
+import com.kh.flicks.movie.streaming.ui.activities.ItemCategoryActivity
+import com.kh.flicks.movie.streaming.ui.activities.ItemDetailActivity
+import com.kh.flicks.movie.streaming.ui.activities.ItemFavoriteActivity
 import com.kh.flicks.movie.streaming.ui.activities.ItemSearchedActivity
 import com.kh.flicks.movie.streaming.utils.Util
+import com.kh.flicks.movie.streaming.vm.HomeViewModel
+import kotlinx.coroutines.launch
 import kotlin.math.abs
 
 class HomeFragment(private val context: Activity) : Fragment(R.layout.fragment_home) {
 	private lateinit var binding: FragmentHomeBinding
+	private lateinit var homeViewModel: HomeViewModel
 
 	@SuppressLint("SetTextI18n")
 	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 		super.onViewCreated(view, savedInstanceState)
 		binding = FragmentHomeBinding.bind(view)
+		homeViewModel = ViewModelProvider(this)[HomeViewModel::class.java]
 
 		// TODO: code here.
 		hideSoftKeyboardFromWindow()
 		appBar()
 		searchField()
-		carouselImage()
-		categoryList()
-		popularList()
+		buttonFavorite()
+		lifecycleScope.launch {
+			homeViewModel.uiState.observe(viewLifecycleOwner) { item ->
+				imageCarousel(item.carousel)
+				categoryList(item.category)
+				popularList(item.popularItem)
+			}
+		}
 	}
 
 	private fun hideSoftKeyboardFromWindow() {
@@ -56,6 +70,12 @@ class HomeFragment(private val context: Activity) : Fragment(R.layout.fragment_h
 		context.localImage(R.drawable.profile_image, binding.profileImageHomeFragment)
 		binding.userNameHomeFragment.text = Util.capitalize("Hello, Davide!")
 		binding.greetingTextHomeFragment.text = "Let's stream your favorite movies."
+	}
+
+	private fun buttonFavorite() {
+		binding.buttonFavoriteHomeFragment.setOnClickListener {
+			context.startActivity(Intent(context, ItemFavoriteActivity::class.java))
+		}
 	}
 
 	private fun searchField() {
@@ -73,32 +93,7 @@ class HomeFragment(private val context: Activity) : Fragment(R.layout.fragment_h
 		}
 	}
 
-	private fun carouselImage() {
-		val list = ArrayList<Carousel>()
-		list.add(
-			Carousel(
-				1,
-				"Black Panther: Wakanda Forever",
-				R.drawable.profile_image,
-				"20, November 2023"
-			)
-		)
-		list.add(
-			Carousel(
-				2,
-				"Black Panther: Wakanda Forever",
-				R.drawable.carousel_image_2,
-				"10, Oct 2021"
-			)
-		)
-		list.add(
-			Carousel(
-				3,
-				"Black Panther: Wakanda Forever",
-				R.drawable.carousel_image_1,
-				"04, Aug 2020"
-			)
-		)
+	private fun imageCarousel(list: ArrayList<Carousel>) {
 		val adapter = CarouselAdapter(context, list)
 		val viewPager = binding.carouselImageSliderHomeFragment
 
@@ -122,19 +117,15 @@ class HomeFragment(private val context: Activity) : Fragment(R.layout.fragment_h
 
 	private val categoryListener = object : Onclick {
 		override fun onItemClickLister(item: Category) {
-			// TODO: code here.
-			context.toastMessage(item.name.toString())
+			// TODO: navigate to ItemCategoryActivity.
+			context.startActivity(Intent(context, ItemCategoryActivity::class.java).apply {
+				putExtra("data", item.name.toString())
+			})
 		}
 	}
 
-	private fun categoryList() {
+	private fun categoryList(list: ArrayList<Category>) {
 		binding.tvCategoryHomeFragment.text = Util.capitalize("Categories")
-		val list = ArrayList<Category>()
-		list.add(Category(1, "All"))
-		list.add(Category(2, "Comedy"))
-		list.add(Category(3, "Animation"))
-		list.add(Category(4, "Document"))
-		list.add(Category(5, "KDrama"))
 
 		val adapter = CategoryAdapter(list, categoryListener)
 		val rcView = binding.rcCategoryListHomeFragment
@@ -142,44 +133,19 @@ class HomeFragment(private val context: Activity) : Fragment(R.layout.fragment_h
 		rcView.adapter = adapter
 	}
 
-	private fun popularList() {
-		binding.tvPopularHomeFragment.text = Util.capitalize("Most Popular")
-		val list = ArrayList<MovieDetail>()
-		list.add(
-			MovieDetail(
-				1,
-				"The handsome boy in my school.",
-				R.drawable.profile_image,
-				"This is the story that talk about the handsome boy in my school.",
-				"12 November, 2023",
-				3.4,
-				"Animation"
-			)
-		)
-		list.add(
-			MovieDetail(
-				2,
-				"The boy fly to the moon.",
-				R.drawable.carousel_image_2,
-				"This is the story that talk about The boy fly to the moon.",
-				"20 Oct, 2021",
-				4.0,
-				"Animation"
-			)
-		)
-		list.add(
-			MovieDetail(
-				3,
-				"The boy fly to the moon.",
-				R.drawable.carousel_image_1,
-				"This is the story that talk about The boy fly to the moon.",
-				"20 Oct, 2021",
-				4.3,
-				"Animation"
-			)
-		)
+	private val movieListener = object : OnMovieClick {
+		override fun onItemClickListener(movie: MovieDetail) {
+			// TODO: navigate to detail movie
+			context.startActivity(Intent(context, ItemDetailActivity::class.java).apply {
+				putExtra("data", movie)
+			})
+		}
+	}
 
-		val adapter = PopularItemAdapter(context, list)
+	private fun popularList(list: ArrayList<MovieDetail>) {
+		binding.tvPopularHomeFragment.text = Util.capitalize("Most Popular")
+
+		val adapter = MovieAdapter(context, list, movieListener)
 		val rcView = binding.rcPopularListHomeFragment
 		rcView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
 		rcView.adapter = adapter

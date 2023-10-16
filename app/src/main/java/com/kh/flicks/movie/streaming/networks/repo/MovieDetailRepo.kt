@@ -6,11 +6,15 @@ import com.kh.flicks.movie.streaming.networks.models.MovieDetail
 class MovieDetailRepo {
 	private val movieDetailRepo = ArrayList<MovieDetail>()
 
-	fun addSlider(detail: MovieDetail) {
+	fun clearList() {
+		movieDetailRepo.clear()
+	}
+
+	fun addMovieDetail(detail: MovieDetail) {
 		movieDetailRepo.add(detail)
 	}
 
-	fun getAllSlider(): ArrayList<MovieDetail> {
+	fun getMovieDetail(): ArrayList<MovieDetail> {
 		return movieDetailRepo
 	}
 }

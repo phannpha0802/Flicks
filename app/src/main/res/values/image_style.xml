@@ -17,4 +17,9 @@
 		<item name="cornerSizeTopLeft">5%</item>
 		<item name="cornerSizeTopRight">5%</item>
 	</style>
+
+	<style name="TopLeftAndBottomLeft">
+		<item name="cornerSizeTopLeft">5%</item>
+		<item name="cornerSizeBottomLeft">5%</item>
+	</style>
 </resources>
