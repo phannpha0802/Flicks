@@ -15,10 +15,12 @@ import com.kh.flicks.movie.streaming.adapters.CategoryAdapter
 import com.kh.flicks.movie.streaming.adapters.MovieAdapter
 import com.kh.flicks.movie.streaming.adapters.MovieTodayAdapter
 import com.kh.flicks.movie.streaming.databinding.FragmentSearchBinding
+import com.kh.flicks.movie.streaming.listeners.OnMovieClick
 import com.kh.flicks.movie.streaming.listeners.Onclick
 import com.kh.flicks.movie.streaming.networks.models.Category
 import com.kh.flicks.movie.streaming.networks.models.MovieDetail
 import com.kh.flicks.movie.streaming.ui.activities.ItemCategoryActivity
+import com.kh.flicks.movie.streaming.ui.activities.ItemDetailActivity
 import com.kh.flicks.movie.streaming.ui.activities.ItemSearchedActivity
 import com.kh.flicks.movie.streaming.utils.Util
 import com.kh.flicks.movie.streaming.vm.SearchViewModel
@@ -86,9 +88,18 @@ class SearchFragment(private val context: Activity) : Fragment(R.layout.fragment
 		rcView.adapter = adapter
 	}
 
+	private val movieListener = object : OnMovieClick {
+		override fun onItemClickListener(movie: MovieDetail) {
+			// TODO: navigate to detail movie
+			context.startActivity(Intent(context, ItemDetailActivity::class.java).apply {
+				putExtra("data", movie)
+			})
+		}
+	}
+
 	private fun recommendList(list: ArrayList<MovieDetail>) {
 		binding.tvRecommendSearchFragment.text = Util.capitalize("Recommend for you")
-		val adapter = MovieAdapter(context, list)
+		val adapter = MovieAdapter(context, list, movieListener)
 		val rcView = binding.rcRecommendListSearchFragment
 		rcView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
 		rcView.adapter = adapter

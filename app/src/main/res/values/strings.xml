@@ -20,5 +20,7 @@
 	<string name="cancel">Cancel</string>
 	<string name="action">action |</string>
 	<string name="coming_soon">coming soon!</string>
+	<string name="play">Play</string>
+	<string name="descriptions">Descriptions</string>
 	<!--	string home fragment end-->
 </resources>

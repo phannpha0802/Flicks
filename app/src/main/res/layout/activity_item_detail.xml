@@ -6,9 +6,330 @@
 	<androidx.constraintlayout.widget.ConstraintLayout
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
+		android:background="@color/dark_color"
 		tools:context=".ui.activities.ItemDetailActivity">
 
+		<androidx.core.widget.NestedScrollView
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent">
 
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="600dp">
+
+					<ImageView
+						android:id="@+id/imageBack"
+						android:layout_width="match_parent"
+						android:layout_height="match_parent"
+						android:scaleType="centerCrop"
+						android:src="@drawable/profile_image" />
+
+					<ImageView
+						android:layout_width="match_parent"
+						android:layout_height="match_parent"
+						android:scaleType="centerCrop"
+						android:src="@drawable/detail_overlay_image" />
+
+					<com.google.android.material.imageview.ShapeableImageView
+						android:id="@+id/imageFront"
+						android:layout_width="205dp"
+						android:layout_height="287dp"
+						android:layout_centerInParent="true"
+						android:scaleType="centerCrop"
+						android:src="@drawable/profile_image"
+						app:shapeAppearanceOverlay="@style/Circular5" />
+
+					<LinearLayout
+						android:id="@+id/container1"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_below="@+id/imageFront"
+						android:layout_centerInParent="true"
+						android:layout_marginTop="24dp"
+						android:gravity="center_horizontal">
+
+						<LinearLayout
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:gravity="center_vertical">
+
+							<ImageView
+								android:layout_width="16dp"
+								android:layout_height="16dp"
+								android:src="@drawable/calendar_image"
+								app:tint="@color/grey_color" />
+
+							<TextView
+								android:id="@+id/releaseDate"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_marginHorizontal="4dp"
+								android:ellipsize="end"
+								android:fontFamily="@font/montserrat_semi_bold"
+								android:maxLines="1"
+								android:textColor="@color/grey_color"
+								android:textSize="12sp"
+								tools:text="2022   |  " />
+						</LinearLayout>
+
+						<LinearLayout
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:gravity="center_vertical">
+
+							<ImageView
+								android:layout_width="16dp"
+								android:layout_height="16dp"
+								android:src="@drawable/clock_image"
+								app:tint="@color/grey_color" />
+
+							<TextView
+								android:id="@+id/durationMovie"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_marginHorizontal="4dp"
+								android:ellipsize="end"
+								android:fontFamily="@font/montserrat_semi_bold"
+								android:maxLines="1"
+								android:textColor="@color/grey_color"
+								android:textSize="12sp"
+								tools:text="148 Minutes   |   " />
+						</LinearLayout>
+
+						<LinearLayout
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:gravity="center_vertical">
+
+							<ImageView
+								android:layout_width="16dp"
+								android:layout_height="16dp"
+								android:src="@drawable/film_image"
+								app:tint="@color/grey_color" />
+
+							<TextView
+								android:id="@+id/categoryMovie"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_marginHorizontal="4dp"
+								android:ellipsize="end"
+								android:fontFamily="@font/montserrat_semi_bold"
+								android:maxLines="1"
+								android:textColor="@color/grey_color"
+								android:textSize="12sp"
+								tools:text="Action" />
+						</LinearLayout>
+
+					</LinearLayout>
+
+					<LinearLayout
+						android:id="@+id/container2"
+						android:layout_width="wrap_content"
+						android:layout_height="24dp"
+						android:layout_below="@+id/container1"
+						android:layout_centerHorizontal="true"
+						android:layout_marginTop="16dp"
+						android:background="@drawable/rating_bg"
+						android:gravity="center_vertical"
+						android:paddingHorizontal="8dp"
+						android:paddingVertical="4dp">
+
+						<RatingBar
+							style="?android:attr/ratingBarStyleSmall"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginEnd="4dp"
+							android:isIndicator="true"
+							android:numStars="1"
+							android:progressBackgroundTint="@color/orange_color"
+							android:progressTint="@color/orange_color"
+							android:rating="1"
+							android:stepSize="0.1" />
+
+						<TextView
+							android:id="@+id/ratingItem"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:fontFamily="@font/montserrat_semi_bold"
+							android:textColor="@color/orange_color"
+							tools:text="4.5" />
+					</LinearLayout>
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_below="@+id/container2"
+						android:layout_marginTop="24dp"
+						android:gravity="center_horizontal">
+
+						<LinearLayout
+							android:id="@+id/buttonPlay"
+							android:layout_width="115dp"
+							android:layout_height="48dp"
+							android:background="@drawable/play_bg"
+							android:gravity="center">
+
+							<ImageView
+								android:layout_width="16dp"
+								android:layout_height="16dp"
+								android:layout_marginEnd="8dp"
+								android:src="@drawable/play_icon"
+								app:tint="@color/white_grey_color" />
+
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:fontFamily="@font/montserrat_bold"
+								android:text="@string/play"
+								android:textColor="@color/white_grey_color"
+								android:textSize="16sp"
+								android:textStyle="bold" />
+
+						</LinearLayout>
+
+						<ImageView
+							android:id="@+id/buttonDownload"
+							android:layout_width="48dp"
+							android:layout_height="48dp"
+							android:layout_marginHorizontal="16dp"
+							android:background="@drawable/circle_bg"
+							android:padding="12dp"
+							android:src="@drawable/ic_download"
+							app:tint="@color/orange_color" />
+
+						<ImageView
+							android:id="@+id/buttonShare"
+							android:layout_width="48dp"
+							android:layout_height="48dp"
+							android:background="@drawable/circle_bg"
+							android:padding="12dp"
+							android:src="@drawable/share_icon"
+							app:tint="@color/blue_accent_color" />
+					</LinearLayout>
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_alignParentTop="true"
+						android:layout_marginHorizontal="12dp"
+						android:layout_marginTop="24dp"
+						android:gravity="center_vertical">
+
+						<com.google.android.material.imageview.ShapeableImageView
+							android:id="@+id/buttonBack"
+							android:layout_width="40dp"
+							android:layout_height="40dp"
+							android:background="@color/soft_color"
+							android:scaleType="center"
+							android:src="@drawable/back_icon"
+							app:shapeAppearanceOverlay="@style/Circular50"
+							app:tint="@color/white_grey_color" />
+
+						<Space
+							android:layout_width="0dp"
+							android:layout_height="0dp"
+							android:layout_weight="1" />
+
+						<TextView
+							android:id="@+id/titleMovie"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginHorizontal="12dp"
+							android:ellipsize="end"
+							android:ems="12"
+							android:fontFamily="@font/montserrat_medium"
+							android:maxLines="1"
+							android:textAlignment="center"
+							android:textColor="@color/white_grey_color"
+							android:textSize="14sp"
+							android:textStyle="bold"
+							tools:text="Spider-Man No Way" />
+
+						<Space
+							android:layout_width="0dp"
+							android:layout_height="0dp"
+							android:layout_weight="1" />
+
+						<ImageView
+							android:id="@+id/buttonFavorite"
+							android:layout_width="40dp"
+							android:layout_height="40dp"
+							android:background="@drawable/favorite_bg"
+							android:contentDescription="@null"
+							android:padding="8dp"
+							android:src="@drawable/favorite_icon"
+							app:tint="@color/red_color" />
+
+					</LinearLayout>
+
+				</RelativeLayout>
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginHorizontal="12dp"
+					android:layout_marginTop="18dp"
+					android:orientation="vertical">
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:fontFamily="@font/montserrat_semi_bold"
+						android:text="@string/descriptions"
+						android:textColor="@color/white_grey_color"
+						android:textSize="16sp"
+						android:textStyle="bold" />
+
+					<TextView
+						android:id="@+id/descMovie"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginTop="8dp"
+						android:ellipsize="end"
+						android:fontFamily="@font/montserrat_regular"
+						android:maxLines="2"
+						android:textColor="@color/white_grey_color"
+						android:textSize="12sp"
+						tools:text="This is story that talk about the boy can fly" />
+				</LinearLayout>
+
+				<LinearLayout
+					android:id="@+id/containerEpisode"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginHorizontal="12dp"
+					android:layout_marginTop="16dp"
+					android:layout_marginBottom="24dp"
+					android:orientation="vertical">
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:fontFamily="@font/montserrat_semi_bold"
+						android:textColor="@color/white_grey_color"
+						android:textSize="16sp"
+						android:textStyle="bold"
+						tools:text="Episode" />
+
+					<androidx.recyclerview.widget.RecyclerView
+						android:id="@+id/rcEpisode"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginTop="12dp" />
+				</LinearLayout>
+
+			</LinearLayout>
+
+		</androidx.core.widget.NestedScrollView>
 
 	</androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

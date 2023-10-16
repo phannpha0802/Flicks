@@ -8,9 +8,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.kh.flicks.movie.streaming.R
 import com.kh.flicks.movie.streaming.databinding.PopularItemLayoutBinding
 import com.kh.flicks.movie.streaming.extensions.localImage
+import com.kh.flicks.movie.streaming.listeners.OnMovieClick
 import com.kh.flicks.movie.streaming.networks.models.MovieDetail
 
-class MovieAdapter(private val context: Activity, private val movie: ArrayList<MovieDetail>) :
+class MovieAdapter(
+	private val context: Activity,
+	private val movie: ArrayList<MovieDetail>,
+	private val onClick: OnMovieClick
+) :
 	RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
 
 	inner class ViewHolder(private val binding: PopularItemLayoutBinding) :
@@ -20,6 +25,11 @@ class MovieAdapter(private val context: Activity, private val movie: ArrayList<M
 			binding.categoryItem.text = item.category
 			binding.ratingItem.text = item.rating.toString()
 			context.localImage(item.image ?: R.drawable.profile_image, binding.imageItem)
+
+			// movie selected listener.
+			binding.imageItem.setOnClickListener {
+				onClick.onItemClickListener(item)
+			}
 		}
 	}
 
