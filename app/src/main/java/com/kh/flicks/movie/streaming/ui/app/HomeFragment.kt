@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
+import com.google.gson.Gson
 import com.kh.flicks.movie.streaming.R
 import com.kh.flicks.movie.streaming.adapters.CarouselAdapter
 import com.kh.flicks.movie.streaming.adapters.CategoryAdapter
@@ -74,7 +75,7 @@ class HomeFragment(private val context: Activity) : Fragment(R.layout.fragment_h
 
 	private fun buttonFavorite() {
 		binding.buttonFavoriteHomeFragment.setOnClickListener {
-			context.startActivity(Intent(context, ItemFavoriteActivity::class.java))
+			context.startActivity(Intent(context,ItemFavoriteActivity::class.java))
 		}
 	}
 
@@ -135,10 +136,8 @@ class HomeFragment(private val context: Activity) : Fragment(R.layout.fragment_h
 
 	private val movieListener = object : OnMovieClick {
 		override fun onItemClickListener(movie: MovieDetail) {
-			// TODO: navigate to detail movie
-			context.startActivity(Intent(context, ItemDetailActivity::class.java).apply {
-				putExtra("data", movie)
-			})
+			val movieObject = Gson().toJson(movie)
+			ItemDetailActivity.newIntent(context,movieObject)
 		}
 	}
 
