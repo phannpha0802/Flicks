@@ -2,7 +2,7 @@ package com.kh.flicks.movie.streaming.networks.models
 
 import java.io.Serializable
 
-data class MovieDetail(g
+data class MovieDetail(
 	var id: Int?,
 	var title: String?,
 	var image: Int?,
