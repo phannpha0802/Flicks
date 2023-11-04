@@ -9,16 +9,266 @@
 		android:background="@color/dark_color"
 		tools:context=".ui.app.ProfileFragment">
 
-		<TextView
-			android:id="@+id/tvText"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			tools:text="Profile Page"
-			android:textColor="@color/white_color"
-			app:layout_constraintBottom_toBottomOf="parent"
-			app:layout_constraintEnd_toEndOf="parent"
-			app:layout_constraintStart_toStartOf="parent"
-			app:layout_constraintTop_toTopOf="parent" />
+		<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			xmlns:app="http://schemas.android.com/apk/res-auto"
+			xmlns:tools="http://schemas.android.com/tools"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:background="@color/dark_color"
+			tools:context=".ui.app.ProfileFragment">
+
+			<ScrollView
+				android:layout_width="match_parent"
+				android:layout_height="match_parent">
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical">
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginTop="12dp"
+						android:gravity="center_horizontal">
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:fontFamily="@font/montserrat_semi_bold"
+							android:text="Profile"
+							android:textColor="@color/white_color"
+							android:textSize="18sp" />
+					</LinearLayout>
+
+					<LinearLayout
+						android:id="@+id/containerProfileInProfileFragment"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginHorizontal="24dp"
+						android:layout_marginTop="12dp"
+						android:background="@drawable/container_detail_splash_bg"
+						android:gravity="center_vertical"
+						android:padding="16dp">
+
+						<com.google.android.material.imageview.ShapeableImageView
+							android:id="@+id/imageProfileInProfileFragment"
+							android:layout_width="54dp"
+							android:layout_height="54dp"
+							android:scaleType="centerCrop"
+							android:src="@drawable/profile_image"
+							app:shapeAppearanceOverlay="@style/Circular50" />
+
+						<LinearLayout
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginHorizontal="16dp"
+							android:orientation="vertical">
+
+							<TextView
+								android:id="@+id/userNameInProfileFragment"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:ellipsize="end"
+								android:fontFamily="@font/montserrat_semi_bold"
+								android:maxLength="20"
+								android:maxLines="1"
+								android:text="User Name"
+								android:textColor="@color/white_color"
+								android:textSize="18sp" />
+
+							<TextView
+								android:id="@+id/emailInProfileFragment"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_marginTop="4dp"
+								android:ellipsize="end"
+								android:fontFamily="@font/montserrat_regular"
+								android:maxLength="32"
+								android:maxLines="1"
+								android:text="simple@gmail.con"
+								android:textColor="@color/grey_color"
+								android:textSize="14sp" />
+						</LinearLayout>
+
+						<Space
+							android:layout_width="0dp"
+							android:layout_height="0dp"
+							android:layout_weight="1" />
+
+						<ImageView
+							android:id="@+id/buttonEditProfileInProfileFragment"
+							android:layout_width="26dp"
+							android:layout_height="26dp"
+							android:layout_marginHorizontal="16dp"
+							android:src="@drawable/ic_edite"
+							app:tint="@color/blue_accent_color" />
+
+					</LinearLayout>
+
+					<LinearLayout
+						android:id="@+id/containerAccountInProfileFragment"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginHorizontal="24dp"
+						android:layout_marginTop="24dp"
+						android:background="@drawable/container_detail_splash_bg"
+						android:orientation="vertical"
+						android:padding="16dp">
+
+						<TextView
+							android:id="@+id/textAccountInProfileFragment"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:fontFamily="@font/montserrat_semi_bold"
+							android:text="@string/account"
+							android:textColor="@color/white_color"
+							android:textSize="18sp" />
+
+						<LinearLayout
+							android:id="@+id/containerAdminInProfileFragment"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_marginTop="18dp"
+							android:gravity="center_vertical">
+
+							<ImageView
+								android:id="@+id/iconAdminInProfileFragment"
+								android:layout_width="32dp"
+								android:layout_height="32dp"
+								android:background="@drawable/background_button_circle"
+								android:padding="8dp"
+								android:src="@drawable/ic_profile"
+								app:tint="@color/blue_accent_color" />
+
+							<TextView
+								android:id="@+id/textAdminInProfileFragment"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_marginHorizontal="8dp"
+								android:ellipsize="end"
+								android:fontFamily="@font/montserrat_semi_bold"
+								android:maxLines="1"
+								android:text="@string/admin"
+								android:textColor="@color/white_color"
+								android:textSize="16sp" />
+
+							<Space
+								android:layout_width="0dp"
+								android:layout_height="0dp"
+								android:layout_weight="1" />
+
+							<ImageView
+								android:id="@+id/iconArrowRightAdminInProfileFragment"
+								android:layout_width="20dp"
+								android:layout_height="20dp"
+								android:layout_marginHorizontal="16dp"
+								android:src="@drawable/ic_arrow_right"
+								app:tint="@color/blue_accent_color" />
+						</LinearLayout>
+
+						<LinearLayout
+							android:id="@+id/containerMemberInProfileFragment"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_marginTop="24dp"
+							android:gravity="center_vertical">
+
+							<ImageView
+								android:id="@+id/iconMemberInProfileFragment"
+								android:layout_width="32dp"
+								android:layout_height="32dp"
+								android:background="@drawable/background_button_circle"
+								android:padding="8dp"
+								android:src="@drawable/ic_profile"
+								app:tint="@color/grey_color" />
+
+							<TextView
+								android:id="@+id/textMemberInProfileFragment"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_marginHorizontal="8dp"
+								android:ellipsize="end"
+								android:fontFamily="@font/montserrat_semi_bold"
+								android:maxLines="1"
+								android:text="@string/member"
+								android:textColor="@color/white_color"
+								android:textSize="16sp" />
+
+							<Space
+								android:layout_width="0dp"
+								android:layout_height="0dp"
+								android:layout_weight="1" />
+
+							<ImageView
+								android:id="@+id/iconArrowRightMemberInProfileFragment"
+								android:layout_width="20dp"
+								android:layout_height="20dp"
+								android:layout_marginHorizontal="16dp"
+								android:src="@drawable/ic_arrow_right"
+								app:tint="@color/blue_accent_color" />
+						</LinearLayout>
+
+						<LinearLayout
+							android:id="@+id/containerChangePasswordInProfileFragment"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_marginTop="18dp"
+							android:gravity="center_vertical">
+
+							<ImageView
+								android:id="@+id/iconChangePasswordInProfileFragment"
+								android:layout_width="32dp"
+								android:layout_height="32dp"
+								android:background="@drawable/background_button_circle"
+								android:padding="8dp"
+								android:src="@drawable/ic_change_password"
+								app:tint="@color/grey_color" />
+
+							<TextView
+								android:id="@+id/textChangePasswordInProfileFragment"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_marginHorizontal="8dp"
+								android:ellipsize="end"
+								android:fontFamily="@font/montserrat_semi_bold"
+								android:maxLines="1"
+								android:text="@string/change_password"
+								android:textColor="@color/white_color"
+								android:textSize="16sp" />
+
+							<Space
+								android:layout_width="0dp"
+								android:layout_height="0dp"
+								android:layout_weight="1" />
+
+							<ImageView
+								android:id="@+id/iconArrowRightChangePasswordInProfileFragment"
+								android:layout_width="20dp"
+								android:layout_height="20dp"
+								android:layout_marginHorizontal="16dp"
+								android:src="@drawable/ic_arrow_right"
+								app:tint="@color/blue_accent_color" />
+						</LinearLayout>
+					</LinearLayout>
+
+
+				</LinearLayout>
+			</ScrollView>
+
+			<com.airbnb.lottie.LottieAnimationView
+				android:id="@+id/loadingAnimationInProfileFragment"
+				android:layout_width="250dp"
+				android:layout_height="250dp"
+				android:layout_centerInParent="true"
+				android:layout_marginBottom="32dp"
+				android:visibility="gone"
+				app:lottie_autoPlay="true"
+				app:lottie_loop="true"
+				app:lottie_rawRes="@raw/panda_popcorn_animation"
+				app:lottie_speed="1" />
+
+		</RelativeLayout>
 
 	</androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
