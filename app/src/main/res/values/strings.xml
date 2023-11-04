@@ -31,4 +31,14 @@
 	<string name="suggested_languages">Suggested Languages</string>
 	<string name="logout">Log Out</string>
 
+	<!--	string home fragment start-->
+	<string name="search_a_title">Search a title...</string>
+	<string name="text_search_not_found">we are sorry, we can not find the movie :(</string>
+	<string name="desc_search_not_found">Find your movie by Type title, categories, years, etc</string>
+	<string name="cancel">Cancel</string>
+	<string name="action">action |</string>
+	<string name="coming_soon">coming soon!</string>
+	<string name="play">Play</string>
+	<string name="descriptions">Descriptions</string>
+	<!--	string home fragment end-->
 </resources>

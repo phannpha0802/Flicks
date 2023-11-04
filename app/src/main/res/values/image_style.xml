@@ -6,10 +6,20 @@
 	</style>
 
 	<style name="Circular10">
-		<item name="cornerSize">5%</item>
+		<item name="cornerSize">10%</item>
 	</style>
 
 	<style name="Circular5">
 		<item name="cornerSize">5%</item>
+	</style>
+
+	<style name="TopRightAndLeft">
+		<item name="cornerSizeTopLeft">5%</item>
+		<item name="cornerSizeTopRight">5%</item>
+	</style>
+
+	<style name="TopLeftAndBottomLeft">
+		<item name="cornerSizeTopLeft">5%</item>
+		<item name="cornerSizeBottomLeft">5%</item>
 	</style>
 </resources>
