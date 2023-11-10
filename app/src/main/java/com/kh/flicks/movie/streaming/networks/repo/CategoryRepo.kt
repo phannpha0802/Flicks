@@ -6,6 +6,10 @@ import com.kh.flicks.movie.streaming.networks.models.Category
 class CategoryRepo {
 	private val categoryRepo = ArrayList<Category>()
 
+	fun clearList() {
+		categoryRepo.clear()
+	}
+
 	fun addCategory(category: Category) {
 		categoryRepo.add(category)
 	}

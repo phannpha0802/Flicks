@@ -16,6 +16,6 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
 		binding = FragmentProfileBinding.bind(view)
 
 		// TODO: code here.
-		binding.tvText.text = "Profile Page"
+//		binding.tvText.text = "Profile Page"
 	}
 }

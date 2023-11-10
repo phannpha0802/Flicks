@@ -3,22 +3,132 @@
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools">
 
-	<androidx.constraintlayout.widget.ConstraintLayout
+	<androidx.core.widget.NestedScrollView
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		android:background="@color/dark_color"
 		tools:context=".ui.app.SearchFragment">
 
-		<TextView
-			android:id="@+id/tvText"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			tools:text="Search Page"
-			android:textColor="@color/white_color"
-			app:layout_constraintBottom_toBottomOf="parent"
-			app:layout_constraintEnd_toEndOf="parent"
-			app:layout_constraintStart_toStartOf="parent"
-			app:layout_constraintTop_toTopOf="parent" />
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent">
 
-	</androidx.constraintlayout.widget.ConstraintLayout>
+			<!--		Search field start-->
+			<LinearLayout
+				android:id="@+id/containerSearchLayout"
+				android:layout_width="match_parent"
+				android:layout_height="50dp"
+				android:layout_marginHorizontal="16dp"
+				android:layout_marginVertical="12dp"
+				android:background="@drawable/search_field_bg"
+				android:gravity="center_vertical"
+				android:paddingHorizontal="12dp"
+				android:paddingVertical="4dp"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toTopOf="parent">
+
+				<ImageView
+					android:layout_width="40dp"
+					android:layout_height="40dp"
+					android:contentDescription="@null"
+					android:padding="10dp"
+					android:src="@drawable/search_icon"
+					app:tint="@color/grey_color" />
+
+				<EditText
+					android:id="@+id/searchField"
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:autofillHints="name"
+					android:background="@null"
+					android:hint="@string/search_a_title"
+					android:imeOptions="actionSearch"
+					android:inputType="text"
+					android:maxLength="50"
+					android:paddingHorizontal="8dp"
+					android:textColor="@color/white_color"
+					android:textColorHint="@color/grey_color"
+					android:textSize="14sp" />
+
+			</LinearLayout>
+			<!--		Search field end-->
+
+			<!--		Category list start-->
+			<androidx.recyclerview.widget.RecyclerView
+				android:id="@+id/rcCategoryListSearchFragment"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="16dp"
+				android:layout_marginTop="32dp"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@id/containerSearchLayout" />
+			<!--		Category list end-->
+
+			<!--		today list start-->
+			<LinearLayout
+				android:id="@+id/containerTodayLayout"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="16dp"
+				android:layout_marginTop="32dp"
+				android:orientation="vertical"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@id/rcCategoryListSearchFragment">
+
+				<TextView
+					android:id="@+id/tvTodaySearchFragment"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:ellipsize="end"
+					android:maxLines="1"
+					android:textColor="@color/white_grey_color"
+					android:textSize="16sp"
+					android:textStyle="bold"
+					tools:text="Today" />
+
+				<androidx.recyclerview.widget.RecyclerView
+					android:id="@+id/rcTodayListSearchFragment"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="16dp" />
+			</LinearLayout>
+			<!--		today list end-->
+
+			<!--		today list start-->
+			<LinearLayout
+				android:id="@+id/containerRecommendLayout"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="16dp"
+				android:layout_marginTop="32dp"
+				android:orientation="vertical"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@id/containerTodayLayout">
+
+				<TextView
+					android:id="@+id/tvRecommendSearchFragment"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:ellipsize="end"
+					android:maxLines="1"
+					android:textColor="@color/white_grey_color"
+					android:textSize="16sp"
+					android:textStyle="bold"
+					tools:text="Recommend for you" />
+
+				<androidx.recyclerview.widget.RecyclerView
+					android:id="@+id/rcRecommendListSearchFragment"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="16dp" />
+			</LinearLayout>
+			<!--		today list end-->
+
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+	</androidx.core.widget.NestedScrollView>
 </layout>

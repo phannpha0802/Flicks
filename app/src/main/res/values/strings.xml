@@ -13,12 +13,4 @@
 	<string name="into_the_flicks">into the Flicks!</string>
 	<!--	string splash activity end-->
 
-	<string name="onboard_title_v1">The biggest international and local film streaming</string>
-	<string name="onboard_body_v1">Semper in cursus magna et eu varius nunc adipiscing. Elementum justo, laoreet id sem semper parturient.</string>
-	<string name="onboard_title_v2">Offers ad-free viewing of high quality</string>
-	<string name="onboard_body_v2">Semper in cursus magna et eu varius nunc adipiscing. Elementum justo, laoreet id sem semper parturient. </string>
-	<string name="onboard_title_v3">Our service brings together your favorite series</string>
-	<string name="onboard_body_v3">Semper in cursus magna et eu varius nunc adipiscing. Elementum justo, laoreet id sem semper parturient. </string>
-
-
 </resources>
