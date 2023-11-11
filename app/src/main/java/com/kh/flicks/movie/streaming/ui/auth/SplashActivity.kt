@@ -9,6 +9,7 @@ import androidx.databinding.DataBindingUtil
 import com.kh.flicks.movie.streaming.MainActivity
 import com.kh.flicks.movie.streaming.R
 import com.kh.flicks.movie.streaming.databinding.ActivitySplashBinding
+import com.kh.flicks.movie.streaming.ui.onboard.OnboardActivity
 
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : AppCompatActivity() {
@@ -18,7 +19,7 @@ class SplashActivity : AppCompatActivity() {
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		binding = DataBindingUtil
-			.setContentView(this@SplashActivity, R.layout.activity_splash)
+			.setContentView(this, R.layout.activity_splash)
 
 		// TODO: code here.
 		splash()
@@ -26,7 +27,7 @@ class SplashActivity : AppCompatActivity() {
 
 	private fun splash() {
 		Handler().postDelayed(({
-			startActivity(Intent(this, MainActivity::class.java))
+			startActivity(Intent(this, OnboardActivity::class.java))
 			finish()
 		}), 5000)
 	}

@@ -20,7 +20,7 @@
 			android:layout_alignParentBottom="true"
 			android:layout_marginHorizontal="24dp"
 			android:layout_marginBottom="24dp"
-			android:background="@drawable/onboard_image_1"
+			android:background="@drawable/onboard_bg"
 			android:orientation="vertical">
 
 			<LinearLayout
@@ -73,7 +73,7 @@
 					android:id="@+id/btnNextOnboardScreen"
 					android:layout_width="80dp"
 					android:layout_height="80dp"
-					android:src="@drawable/onboard_image_2" />
+					android:src="@drawable/next_image" />
 			</LinearLayout>
 		</LinearLayout>
 
