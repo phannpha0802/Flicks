@@ -189,7 +189,7 @@
 								android:layout_width="wrap_content"
 								android:layout_height="wrap_content"
 								android:fontFamily="@font/montserrat_bold"
-								android:text="@string/play"
+								android:text="Play"
 								android:textColor="@color/white_grey_color"
 								android:textSize="16sp"
 								android:textStyle="bold" />
@@ -284,7 +284,7 @@
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:fontFamily="@font/montserrat_semi_bold"
-						android:text="@string/descriptions"
+						android:text="Descriptions"
 						android:textColor="@color/white_grey_color"
 						android:textSize="16sp"
 						android:textStyle="bold" />
