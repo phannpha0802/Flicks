@@ -42,7 +42,7 @@
 					android:layout_height="match_parent"
 					android:autofillHints="name"
 					android:background="@null"
-					android:hint="@string/search_a_title"
+					android:hint="Search title"
 					android:imeOptions="actionSearch"
 					android:inputType="text"
 					android:maxLength="50"
