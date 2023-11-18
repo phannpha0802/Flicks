@@ -9,9 +9,7 @@
 		android:background="@color/dark_color"
 		tools:context=".ui.app.ProfileFragment">
 
-		<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-			xmlns:app="http://schemas.android.com/apk/res-auto"
-			xmlns:tools="http://schemas.android.com/tools"
+		<RelativeLayout
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
 			android:background="@color/dark_color"
@@ -121,7 +119,7 @@
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
 							android:fontFamily="@font/montserrat_semi_bold"
-							android:text="@string/account"
+							android:text="Account"
 							android:textColor="@color/white_color"
 							android:textSize="18sp" />
 
@@ -149,7 +147,7 @@
 								android:ellipsize="end"
 								android:fontFamily="@font/montserrat_semi_bold"
 								android:maxLines="1"
-								android:text="@string/admin"
+								android:text="Admin"
 								android:textColor="@color/white_color"
 								android:textSize="16sp" />
 
@@ -191,7 +189,7 @@
 								android:ellipsize="end"
 								android:fontFamily="@font/montserrat_semi_bold"
 								android:maxLines="1"
-								android:text="@string/member"
+								android:text="Members"
 								android:textColor="@color/white_color"
 								android:textSize="16sp" />
 
@@ -233,7 +231,7 @@
 								android:ellipsize="end"
 								android:fontFamily="@font/montserrat_semi_bold"
 								android:maxLines="1"
-								android:text="@string/change_password"
+								android:text="Change Password"
 								android:textColor="@color/white_color"
 								android:textSize="16sp" />
 
