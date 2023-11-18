@@ -253,6 +253,362 @@
 					</LinearLayout>
 
 
+					<LinearLayout
+						android:id="@+id/containerGeneralInProfileFragment"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginHorizontal="24dp"
+						android:layout_marginTop="24dp"
+						android:background="@drawable/container_detail_splash_bg"
+						android:orientation="vertical"
+						android:padding="16dp">
+
+						<TextView
+							android:id="@+id/textGeneralInProfileFragment"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:fontFamily="@font/montserrat_semi_bold"
+							android:text="@string/general"
+							android:textColor="@color/white_color"
+							android:textSize="18sp" />
+
+						<LinearLayout
+							android:id="@+id/containerNotificationInProfileFragment"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_marginTop="24dp"
+							android:gravity="center_vertical">
+
+							<ImageView
+								android:id="@+id/icNotificationInProfileFragment"
+								android:layout_width="32dp"
+								android:layout_height="32dp"
+								android:background="@drawable/background_button_circle"
+								android:padding="8dp"
+								android:src="@drawable/ic_notification"
+								app:tint="@color/grey_color" />
+
+							<TextView
+								android:id="@+id/textNotificationInProfileFragment"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_marginHorizontal="8dp"
+								android:ellipsize="end"
+								android:fontFamily="@font/montserrat_semi_bold"
+								android:maxLines="1"
+								android:text="@string/notification"
+								android:textColor="@color/white_color"
+								android:textSize="16sp" />
+
+							<Space
+								android:layout_width="0dp"
+								android:layout_height="0dp"
+								android:layout_weight="1" />
+
+							<ImageView
+								android:id="@+id/iconArrowRightNotificationInProfileFragment"
+								android:layout_width="20dp"
+								android:layout_height="20dp"
+								android:layout_marginHorizontal="16dp"
+								android:src="@drawable/ic_arrow_right"
+								app:tint="@color/blue_accent_color" />
+						</LinearLayout>
+
+						<LinearLayout
+							android:id="@+id/containerLanguageInProfileFragment"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_marginTop="18dp"
+							android:gravity="center_vertical">
+
+							<ImageView
+								android:id="@+id/iconLanguageInProfileFragment"
+								android:layout_width="32dp"
+								android:layout_height="32dp"
+								android:background="@drawable/background_button_circle"
+								android:padding="8dp"
+								android:src="@drawable/ic_language"
+								app:tint="@color/grey_color" />
+
+							<TextView
+								android:id="@+id/textLanguageInProfileFragment"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_marginHorizontal="8dp"
+								android:ellipsize="end"
+								android:fontFamily="@font/montserrat_semi_bold"
+								android:maxLines="1"
+								android:text="@string/language"
+								android:textColor="@color/white_color"
+								android:textSize="16sp" />
+
+							<Space
+								android:layout_width="0dp"
+								android:layout_height="0dp"
+								android:layout_weight="1" />
+
+							<ImageView
+								android:id="@+id/iconArrowRightLanguageInProfileFragment"
+								android:layout_width="20dp"
+								android:layout_height="20dp"
+								android:layout_marginHorizontal="16dp"
+								android:src="@drawable/ic_arrow_right"
+								app:tint="@color/blue_accent_color" />
+						</LinearLayout>
+
+						<LinearLayout
+							android:id="@+id/containerCountryInProfileFragment"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_marginTop="18dp"
+							android:gravity="center_vertical">
+
+							<ImageView
+								android:id="@+id/iconCountryInProfileFragment"
+								android:layout_width="32dp"
+								android:layout_height="32dp"
+								android:background="@drawable/background_button_circle"
+								android:padding="8dp"
+								android:src="@drawable/ic_flag"
+								app:tint="@color/grey_color" />
+
+							<TextView
+								android:id="@+id/textCountryInProfileFragment"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_marginHorizontal="8dp"
+								android:ellipsize="end"
+								android:fontFamily="@font/montserrat_semi_bold"
+								android:maxLines="1"
+								android:text="@string/country"
+								android:textColor="@color/white_color"
+								android:textSize="16sp" />
+
+							<Space
+								android:layout_width="0dp"
+								android:layout_height="0dp"
+								android:layout_weight="1" />
+
+							<ImageView
+								android:id="@+id/iconArrowRightCountryInProfileFragment"
+								android:layout_width="20dp"
+								android:layout_height="20dp"
+								android:layout_marginHorizontal="16dp"
+								android:src="@drawable/ic_arrow_right"
+								app:tint="@color/blue_accent_color" />
+						</LinearLayout>
+
+						<LinearLayout
+							android:id="@+id/containerClearCacheInProfileFragment"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_marginTop="18dp"
+							android:gravity="center_vertical">
+
+							<ImageView
+								android:id="@+id/iconClearCacheInProfileFragment"
+								android:layout_width="32dp"
+								android:layout_height="32dp"
+								android:background="@drawable/background_button_circle"
+								android:padding="8dp"
+								android:src="@drawable/ic_cache"
+								app:tint="@color/grey_color" />
+
+							<TextView
+								android:id="@+id/textClearCacheInProfileFragment"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_marginHorizontal="8dp"
+								android:ellipsize="end"
+								android:fontFamily="@font/montserrat_semi_bold"
+								android:maxLines="1"
+								android:text="@string/clear_cache"
+								android:textColor="@color/white_color"
+								android:textSize="16sp" />
+
+							<Space
+								android:layout_width="0dp"
+								android:layout_height="0dp"
+								android:layout_weight="1" />
+
+							<ImageView
+								android:id="@+id/iconArrowRightClearCacheInProfileFragment"
+								android:layout_width="20dp"
+								android:layout_height="20dp"
+								android:layout_marginHorizontal="16dp"
+								android:src="@drawable/ic_arrow_right"
+								app:tint="@color/blue_accent_color" />
+						</LinearLayout>
+
+					</LinearLayout>
+
+					<LinearLayout
+						android:id="@+id/containerMoreInProfileFragment"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginHorizontal="24dp"
+						android:layout_marginTop="24dp"
+						android:background="@drawable/container_detail_splash_bg"
+						android:orientation="vertical"
+						android:padding="16dp">
+
+						<TextView
+							android:id="@+id/textMoreInProfileFragment"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:fontFamily="@font/montserrat_semi_bold"
+							android:text="@string/more"
+							android:textColor="@color/white_color"
+							android:textSize="18sp" />
+
+						<LinearLayout
+							android:id="@+id/containerLegalAndPoliciesInProfileFragment"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_marginTop="24dp"
+							android:gravity="center_vertical">
+
+							<ImageView
+								android:id="@+id/icLegalAndPoliciesInProfileFragment"
+								android:layout_width="32dp"
+								android:layout_height="32dp"
+								android:background="@drawable/background_button_circle"
+								android:padding="8dp"
+								android:src="@drawable/ic_shield"
+								app:tint="@color/grey_color" />
+
+							<TextView
+								android:id="@+id/textLegalAndPoliciesInProfileFragment"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_marginHorizontal="8dp"
+								android:ellipsize="end"
+								android:fontFamily="@font/montserrat_semi_bold"
+								android:maxLines="1"
+								android:text="@string/legal_and_policies"
+								android:textColor="@color/white_color"
+								android:textSize="16sp" />
+
+							<Space
+								android:layout_width="0dp"
+								android:layout_height="0dp"
+								android:layout_weight="1" />
+
+							<ImageView
+								android:id="@+id/iconArrowRightLegalAndPoliciesInProfileFragment"
+								android:layout_width="20dp"
+								android:layout_height="20dp"
+								android:layout_marginHorizontal="16dp"
+								android:src="@drawable/ic_arrow_right"
+								app:tint="@color/blue_accent_color" />
+						</LinearLayout>
+
+						<LinearLayout
+							android:id="@+id/containerHelpAndFeedbackInProfileFragment"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_marginTop="18dp"
+							android:gravity="center_vertical">
+
+							<ImageView
+								android:id="@+id/icHelpAndFeedbackInProfileFragment"
+								android:layout_width="32dp"
+								android:layout_height="32dp"
+								android:background="@drawable/background_button_circle"
+								android:padding="8dp"
+								android:src="@drawable/ic_question"
+								app:tint="@color/grey_color" />
+
+							<TextView
+								android:id="@+id/textHelpAndFeedbackInProfileFragment"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_marginHorizontal="8dp"
+								android:ellipsize="end"
+								android:fontFamily="@font/montserrat_semi_bold"
+								android:maxLines="1"
+								android:text="@string/help_and_feedback"
+								android:textColor="@color/white_color"
+								android:textSize="16sp" />
+
+							<Space
+								android:layout_width="0dp"
+								android:layout_height="0dp"
+								android:layout_weight="1" />
+
+							<ImageView
+								android:id="@+id/iconArrowRightHelpAndFeedbackInProfileFragment"
+								android:layout_width="20dp"
+								android:layout_height="20dp"
+								android:layout_marginHorizontal="16dp"
+								android:src="@drawable/ic_arrow_right"
+								app:tint="@color/blue_accent_color" />
+						</LinearLayout>
+
+						<LinearLayout
+							android:id="@+id/containerAboutUsInProfileFragment"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_marginTop="18dp"
+							android:gravity="center_vertical">
+
+							<ImageView
+								android:id="@+id/iconAboutUsInProfileFragment"
+								android:layout_width="32dp"
+								android:layout_height="32dp"
+								android:background="@drawable/background_button_circle"
+								android:padding="8dp"
+								android:src="@drawable/ic_info"
+								app:tint="@color/grey_color" />
+
+							<TextView
+								android:id="@+id/textAboutUsInProfileFragment"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_marginHorizontal="8dp"
+								android:ellipsize="end"
+								android:fontFamily="@font/montserrat_semi_bold"
+								android:maxLines="1"
+								android:text="@string/about_us"
+								android:textColor="@color/white_color"
+								android:textSize="16sp" />
+
+							<Space
+								android:layout_width="0dp"
+								android:layout_height="0dp"
+								android:layout_weight="1" />
+
+							<ImageView
+								android:id="@+id/iconArrowRightAboutUsInProfileFragment"
+								android:layout_width="20dp"
+								android:layout_height="20dp"
+								android:layout_marginHorizontal="16dp"
+								android:src="@drawable/ic_arrow_right"
+								app:tint="@color/blue_accent_color" />
+						</LinearLayout>
+
+					</LinearLayout>
+
+					<LinearLayout
+						android:id="@+id/containerLogoutInProfileFragment"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginHorizontal="24dp"
+						android:layout_marginVertical="24dp"
+						android:background="@drawable/container_detail_splash_bg"
+						android:gravity="center_horizontal"
+						android:paddingVertical="18dp">
+
+						<TextView
+							android:id="@+id/textLogoutInProfileFragment"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:fontFamily="@font/montserrat_semi_bold"
+							android:text="@string/logout"
+							android:textColor="@color/white_color"
+							android:textSize="18sp" />
+					</LinearLayout>
+
 				</LinearLayout>
 			</ScrollView>
 

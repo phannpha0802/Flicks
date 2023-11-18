@@ -31,6 +31,11 @@
 	<string name="suggested_languages">Suggested Languages</string>
 	<string name="logout">Log Out</string>
 
+	<!--    TODO: This is the string of notification bottom sheet fragment.-->
+	<string name="messages_notifications">Messages Notifications</string>
+	<string name="exceptions">Exceptions</string>
+	<string name="show_notifications">Show Notifications</string>
+
 	<!--	string home fragment start-->
 	<string name="search_a_title">Search a title...</string>
 	<string name="text_search_not_found">we are sorry, we can not find the movie :(</string>
