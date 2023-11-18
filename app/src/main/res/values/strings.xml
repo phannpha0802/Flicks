@@ -22,5 +22,17 @@
 	<!-- TODO: Remove or change this placeholder text -->
 	<string name="hello_blank_fragment">Hello blank fragment</string>
 
+	<string name="messages_notifications">Messages Notifications</string>
+	<string name="exceptions">Exceptions</string>
+	<string name="show_notifications">Show Notifications</string>
 
+	<string name="search_a_title">Search a title...</string>
+	<string name="text_search_not_found">we are sorry, we can not find the movie :(</string>
+	<string name="desc_search_not_found">Find your movie by Type title, categories, years, etc</string>
+	<string name="cancel">Cancel</string>
+	<string name="action">action |</string>
+	<string name="coming_soon">coming soon!</string>
+	<string name="play">Play</string>
+	<string name="descriptions">Descriptions</string>
+  
 </resources>
