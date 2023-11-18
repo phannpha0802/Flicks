@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools">
+
+	<LinearLayout
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:paddingTop="8dp">
+
+		<RelativeLayout
+			android:layout_width="112dp"
+			android:layout_height="165dp">
+
+			<com.google.android.material.imageview.ShapeableImageView
+				android:id="@+id/imageMovie"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:scaleType="centerCrop"
+				android:src="@drawable/carousel_image_2"
+				app:layout_constraintHorizontal_bias="0.5"
+				app:layout_constraintStart_toStartOf="parent"
+				app:shapeAppearanceOverlay="@style/Circular10" />
+
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="24dp"
+				android:layout_marginStart="8dp"
+				android:layout_marginTop="8dp"
+				android:layout_marginEnd="8dp"
+				android:layout_marginBottom="8dp"
+				android:background="@drawable/rating_bg"
+				android:gravity="center_vertical"
+				android:paddingHorizontal="8dp"
+				android:paddingVertical="4dp">
+
+				<RatingBar
+					style="?android:attr/ratingBarStyleSmall"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginEnd="4dp"
+					android:isIndicator="true"
+					android:numStars="1"
+					android:progressBackgroundTint="@color/orange_color"
+					android:progressTint="@color/orange_color"
+					android:rating="1"
+					android:stepSize="0.1" />
+
+				<TextView
+					android:id="@+id/ratingMovie"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:fontFamily="@font/montserrat_semi_bold"
+					android:textColor="@color/orange_color"
+					tools:text="4.5" />
+			</LinearLayout>
+		</RelativeLayout>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginHorizontal="16dp"
+			android:layout_marginVertical="5dp"
+			android:orientation="vertical">
+
+			<TextView
+				android:id="@+id/statusMovie"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:background="@drawable/status_bg"
+				android:fontFamily="@font/montserrat_medium"
+				android:paddingHorizontal="16dp"
+				android:paddingVertical="4dp"
+				android:textColor="@color/white_grey_color"
+				android:textSize="12sp"
+				tools:text="Free" />
+
+			<TextView
+				android:id="@+id/titleMovie"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="12dp"
+				android:ellipsize="end"
+				android:fontFamily="@font/montserrat_bold"
+				android:maxLines="1"
+				android:textColor="@color/white_grey_color"
+				android:textSize="16sp"
+				tools:text="The boy is on the moon" />
+
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="12dp"
+				android:gravity="center_vertical"
+				tools:ignore="UseCompoundDrawables">
+
+				<ImageView
+					android:layout_width="16dp"
+					android:layout_height="16dp"
+					android:contentDescription="@null"
+					android:src="@drawable/calendar_image"
+					app:tint="@color/grey_color" />
+
+				<TextView
+					android:id="@+id/releaseDate"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginHorizontal="4dp"
+					android:ellipsize="end"
+					android:fontFamily="@font/montserrat_semi_bold"
+					android:maxLines="1"
+					android:textColor="@color/grey_color"
+					android:textSize="14sp"
+					tools:text="2022" />
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="12dp"
+				android:gravity="center_vertical"
+				android:orientation="horizontal"
+				tools:ignore="UseCompoundDrawables">
+
+				<ImageView
+					android:layout_width="16dp"
+					android:layout_height="16dp"
+					android:contentDescription="@null"
+					android:src="@drawable/clock_image"
+					app:tint="@color/grey_color" />
+
+				<TextView
+					android:id="@+id/durationMovie"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginHorizontal="4dp"
+					android:ellipsize="end"
+					android:fontFamily="@font/montserrat_semi_bold"
+					android:maxLines="1"
+					android:textColor="@color/grey_color"
+					android:textSize="14sp"
+					tools:text="148 Minutes" />
+
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="12dp"
+				android:gravity="center_vertical">
+
+				<ImageView
+					android:layout_width="16dp"
+					android:layout_height="16dp"
+					android:contentDescription="@null"
+					android:src="@drawable/film_image"
+					app:tint="@color/grey_color" />
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginHorizontal="4dp"
+					android:ellipsize="end"
+					android:fontFamily="@font/montserrat_semi_bold"
+					android:maxLines="1"
+					android:textColor="@color/grey_color"
+					android:textSize="14sp"
+					android:text="Action" />
+
+				<TextView
+					android:id="@+id/categoryMovie"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginHorizontal="4dp"
+					android:ellipsize="end"
+					android:fontFamily="@font/montserrat_semi_bold"
+					android:maxLength="10"
+					android:maxLines="1"
+					android:paddingHorizontal="4dp"
+					android:textColor="@color/blue_accent_color"
+					android:textSize="14sp"
+					tools:text="Animation" />
+			</LinearLayout>
+
+		</LinearLayout>
+
+	</LinearLayout>
+
+</layout>

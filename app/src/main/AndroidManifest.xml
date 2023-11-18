@@ -13,6 +13,22 @@
 		android:theme="@style/Theme.Flicks"
 		tools:targetApi="31">
 		<activity
+			android:name=".ui.activities.ItemFavoriteActivity"
+			android:exported="false"
+			android:screenOrientation="locked"/>
+		<activity
+			android:name=".ui.activities.ItemCategoryActivity"
+			android:exported="false"
+			android:screenOrientation="locked"/>
+		<activity
+			android:name=".ui.activities.ItemDetailActivity"
+			android:exported="false"
+			android:screenOrientation="locked"/>
+		<activity
+			android:name=".ui.activities.ItemSearchedActivity"
+			android:exported="false"
+			android:screenOrientation="locked"/>
+		<activity
 			android:name=".ui.auth.SplashActivity"
 			android:exported="true">
 			<intent-filter>
@@ -23,16 +39,20 @@
 		</activity>
 		<activity
 			android:name=".ui.auth.SignInActivity"
-			android:exported="false" />
+			android:exported="false"
+			android:screenOrientation="locked"/>
 		<activity
 			android:name=".ui.auth.SignUpActivity"
-			android:exported="false" />
+			android:exported="false"
+			android:screenOrientation="locked"/>
 		<activity
 			android:name=".ui.onboard.OnboardActivity"
-			android:exported="false" />
+			android:exported="false"
+			android:screenOrientation="locked"/>
 		<activity
 			android:name=".MainActivity"
-			android:exported="false" />
+			android:exported="true"
+			android:screenOrientation="locked"/>
 	</application>
 
 </manifest>
