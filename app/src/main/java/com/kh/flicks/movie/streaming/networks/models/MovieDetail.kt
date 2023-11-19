@@ -1,7 +1,5 @@
 package com.kh.flicks.movie.streaming.networks.models
 
-import java.io.Serializable
-
 data class MovieDetail(
 	var id: Int?,
 	var title: String?,
@@ -10,4 +8,4 @@ data class MovieDetail(
 	var releaseDate: String?,
 	var rating: Double?,
 	var category: String?
-): Serializable
+)

@@ -90,10 +90,8 @@ class SearchFragment(private val context: Activity) : Fragment(R.layout.fragment
 
 	private val movieListener = object : OnMovieClick {
 		override fun onItemClickListener(movie: MovieDetail) {
-			// TODO: navigate to detail movie
-			context.startActivity(Intent(context, ItemDetailActivity::class.java).apply {
-				putExtra("data", movie)
-			})
+			/*navigate to detail movie*/
+			ItemDetailActivity.newIntent(context,movie.toString())
 		}
 	}
 
