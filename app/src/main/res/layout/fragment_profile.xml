@@ -266,7 +266,7 @@
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
 							android:fontFamily="@font/montserrat_semi_bold"
-							android:text="@string/general"
+							android:text="General"
 							android:textColor="@color/white_color"
 							android:textSize="18sp" />
 
@@ -294,7 +294,7 @@
 								android:ellipsize="end"
 								android:fontFamily="@font/montserrat_semi_bold"
 								android:maxLines="1"
-								android:text="@string/notification"
+								android:text="notification"
 								android:textColor="@color/white_color"
 								android:textSize="16sp" />
 
@@ -336,7 +336,7 @@
 								android:ellipsize="end"
 								android:fontFamily="@font/montserrat_semi_bold"
 								android:maxLines="1"
-								android:text="@string/language"
+								android:text="language"
 								android:textColor="@color/white_color"
 								android:textSize="16sp" />
 
@@ -378,7 +378,7 @@
 								android:ellipsize="end"
 								android:fontFamily="@font/montserrat_semi_bold"
 								android:maxLines="1"
-								android:text="@string/country"
+								android:text="Country"
 								android:textColor="@color/white_color"
 								android:textSize="16sp" />
 
@@ -420,7 +420,7 @@
 								android:ellipsize="end"
 								android:fontFamily="@font/montserrat_semi_bold"
 								android:maxLines="1"
-								android:text="@string/clear_cache"
+								android:text="Clear_cache"
 								android:textColor="@color/white_color"
 								android:textSize="16sp" />
 
@@ -455,7 +455,7 @@
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
 							android:fontFamily="@font/montserrat_semi_bold"
-							android:text="@string/more"
+							android:text="More"
 							android:textColor="@color/white_color"
 							android:textSize="18sp" />
 
@@ -483,7 +483,7 @@
 								android:ellipsize="end"
 								android:fontFamily="@font/montserrat_semi_bold"
 								android:maxLines="1"
-								android:text="@string/legal_and_policies"
+								android:text="Legal_and_policies"
 								android:textColor="@color/white_color"
 								android:textSize="16sp" />
 
@@ -525,7 +525,7 @@
 								android:ellipsize="end"
 								android:fontFamily="@font/montserrat_semi_bold"
 								android:maxLines="1"
-								android:text="@string/help_and_feedback"
+								android:text="Help_and_feedback"
 								android:textColor="@color/white_color"
 								android:textSize="16sp" />
 
@@ -567,7 +567,7 @@
 								android:ellipsize="end"
 								android:fontFamily="@font/montserrat_semi_bold"
 								android:maxLines="1"
-								android:text="@string/about_us"
+								android:text="About us"
 								android:textColor="@color/white_color"
 								android:textSize="16sp" />
 
@@ -602,7 +602,7 @@
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
 							android:fontFamily="@font/montserrat_semi_bold"
-							android:text="@string/logout"
+							android:text="Logout"
 							android:textColor="@color/white_color"
 							android:textSize="18sp" />
 					</LinearLayout>

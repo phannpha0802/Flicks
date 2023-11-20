@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<<<<<<< HEAD
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -14,25 +13,3 @@
         android:src="@drawable/onboard_image_3" />
 
 </RelativeLayout>
-=======
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:tools="http://schemas.android.com/tools"
-	android:layout_width="match_parent"
-	android:layout_height="match_parent"
-	android:background="@color/dark_color"
-	xmlns:app="http://schemas.android.com/apk/res-auto"
-	tools:context=".ui.onboard.OnboardV3Fragment">
-
-	<ImageView
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		app:layout_constraintStart_toStartOf="parent"
-		android:layout_marginTop="32dp"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintTop_toTopOf="parent"
-		android:scaleType="center"
-		android:contentDescription="@null"
-		android:src="@drawable/onboard_v3" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
->>>>>>> 17397fe9225a1ad99ed429aa3154409d984f93a4
