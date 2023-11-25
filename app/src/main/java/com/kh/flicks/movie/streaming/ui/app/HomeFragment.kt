@@ -46,7 +46,6 @@ class HomeFragment(private val context: Activity) : Fragment(R.layout.fragment_h
 		binding = FragmentHomeBinding.bind(view)
 		homeViewModel = ViewModelProvider(this)[HomeViewModel::class.java]
 
-		// TODO: code here.
 		hideSoftKeyboardFromWindow()
 		appBar()
 		searchField()

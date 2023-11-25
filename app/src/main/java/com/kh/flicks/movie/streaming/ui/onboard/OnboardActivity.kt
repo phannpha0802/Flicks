@@ -17,7 +17,6 @@ class OnboardActivity : AppCompatActivity() {
 		super.onCreate(savedInstanceState)
 		binding = DataBindingUtil.setContentView(this, R.layout.activity_onboard)
 
-		// TODO: code here.
 		val adapter = OnboardAdapter(this)
 		adapter.addFragment(
 			OnboardV1Fragment(),
