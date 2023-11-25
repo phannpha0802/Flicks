@@ -1,22 +1,26 @@
 package com.kh.flicks.movie.streaming.ui.auth
 
-import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import com.kh.flicks.movie.streaming.MainActivity
 import com.kh.flicks.movie.streaming.R
 import com.kh.flicks.movie.streaming.databinding.ActivitySignUpBinding
 
 class SignUpActivity : AppCompatActivity() {
 	private lateinit var binding: ActivitySignUpBinding
 
-	@SuppressLint("SetTextI18n")
+	companion object {
+		fun newIntent(activity: Activity?) {
+			activity?.startActivity(Intent(activity, SignUpActivity::class.java))
+		}
+	}
+
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		binding = DataBindingUtil
 			.setContentView(this@SignUpActivity, R.layout.activity_sign_up)
-
-		// TODO: code here.
-		binding.tvText.text = "SignUp Page"
 	}
 }
