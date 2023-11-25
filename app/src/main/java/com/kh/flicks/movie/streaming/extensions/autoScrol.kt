@@ -8,12 +8,6 @@ fun ViewPager2.autoScroll(interval: Long) {
 	val runnable = object : Runnable {
 
 		override fun run() {
-
-			/**
-			 * Calculate "scroll position" with
-			 * adapter pages count and current
-			 * value of scrollPosition.
-			 */
 			val count = adapter?.itemCount ?: 0
 			setCurrentItem(scrollPosition++ % count, true)
 

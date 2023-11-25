@@ -1,10 +1,13 @@
 package com.kh.flicks.movie.streaming
 
-import androidx.appcompat.app.AppCompatActivity
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.kh.flicks.movie.streaming.databinding.ActivityMainBinding
+import com.kh.flicks.movie.streaming.ui.activities.ItemDetailActivity
 import com.kh.flicks.movie.streaming.ui.app.DownloadFragment
 import com.kh.flicks.movie.streaming.ui.app.HomeFragment
 import com.kh.flicks.movie.streaming.ui.app.ProfileFragment
@@ -13,12 +16,17 @@ import com.kh.flicks.movie.streaming.ui.app.SearchFragment
 class MainActivity : AppCompatActivity() {
 	private lateinit var binding: ActivityMainBinding
 
+	companion object {
+		fun newIntent(activity: Activity?) {
+			activity?.startActivity(Intent(activity, MainActivity::class.java))
+		}
+	}
+
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		binding = DataBindingUtil.setContentView(this@MainActivity, R.layout.activity_main)
-
-		// TODO: code here.
 		bottomNavigationBarItemSelected()
+
 	}
 
 	private fun bottomNavigationBarItemSelected() {

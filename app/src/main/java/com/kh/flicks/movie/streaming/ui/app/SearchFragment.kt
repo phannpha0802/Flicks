@@ -36,7 +36,6 @@ class SearchFragment(private val context: Activity) : Fragment(R.layout.fragment
 		binding = FragmentSearchBinding.bind(view)
 		searchViewModel = ViewModelProvider(this)[SearchViewModel::class.java]
 
-		// TODO: code here.
 		searchField()
 		lifecycleScope.launch {
 			searchViewModel.uiState.observe(viewLifecycleOwner) { item ->
@@ -90,10 +89,7 @@ class SearchFragment(private val context: Activity) : Fragment(R.layout.fragment
 
 	private val movieListener = object : OnMovieClick {
 		override fun onItemClickListener(movie: MovieDetail) {
-			// TODO: navigate to detail movie
-			context.startActivity(Intent(context, ItemDetailActivity::class.java).apply {
-				putExtra("data", movie)
-			})
+			ItemDetailActivity.newIntent(context,movie.toString())
 		}
 	}
 
