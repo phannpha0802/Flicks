@@ -2,7 +2,6 @@ package com.kh.flicks.movie.streaming.ui.app
 
 import android.annotation.SuppressLint
 import android.app.Activity
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.EditorInfo
@@ -122,10 +121,7 @@ class HomeFragment(private val context: Activity) : Fragment(R.layout.fragment_h
 
 	private val categoryListener = object : Onclick {
 		override fun onItemClickLister(item: Category) {
-			// TODO: navigate to ItemCategoryActivity.
-			context.startActivity(Intent(context, ItemCategoryActivity::class.java).apply {
-				putExtra("data", item.name.toString())
-			})
+			ItemCategoryActivity.newIntent(context,item.name.toString())
 		}
 	}
 
