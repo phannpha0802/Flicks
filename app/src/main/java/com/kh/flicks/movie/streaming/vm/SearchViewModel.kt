@@ -76,7 +76,7 @@ class SearchViewModel : ViewModel() {
 			MovieDetail(
 				1,
 				"The handsome boy in my school.",
-				R.drawable.profile_image,
+				R.drawable.carousel_image_1,
 				"This is the story that talk about the handsome boy in my school.",
 				"12 November, 2023",
 				3.4,

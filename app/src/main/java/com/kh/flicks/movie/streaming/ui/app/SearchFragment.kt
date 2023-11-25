@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.gson.Gson
 import com.kh.flicks.movie.streaming.R
 import com.kh.flicks.movie.streaming.adapters.CategoryAdapter
 import com.kh.flicks.movie.streaming.adapters.MovieAdapter
@@ -34,20 +35,27 @@ class SearchFragment(private val context: Activity) : Fragment(R.layout.fragment
 	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 		super.onViewCreated(view, savedInstanceState)
 		binding = FragmentSearchBinding.bind(view)
-		searchViewModel = ViewModelProvider(this)[SearchViewModel::class.java]
+		initObject()
+		observeViewModel()
+	}
 
+	private fun initObject(){ // init all object here.
+		searchViewModel = ViewModelProvider(this)[SearchViewModel::class.java]
 		searchField()
+	}
+
+	private fun observeViewModel(){ // observe view model
 		lifecycleScope.launch {
 			searchViewModel.uiState.observe(viewLifecycleOwner) { item ->
 				// assign data.
 				categoryList(item.category)
-				todayList(item.itemToday)
-				recommendList(item.itemRecommend)
+				initMovieTodayAdapter(item.itemToday)
+				initMovieRecommendAdapter(item.itemRecommend)
 			}
 		}
 	}
 
-	private fun searchField() {
+	private fun searchField() {  // search field.
 		binding.searchField.setOnEditorActionListener { _, actionId, _ ->
 			if (actionId == EditorInfo.IME_ACTION_SEARCH) {
 				val text = binding.searchField.text.toString().trim()
@@ -72,14 +80,13 @@ class SearchFragment(private val context: Activity) : Fragment(R.layout.fragment
 	}
 
 	private fun categoryList(list: ArrayList<Category>) {
-
 		val adapter = CategoryAdapter(list, categoryListener)
 		val rcView = binding.rcCategoryListSearchFragment
 		rcView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
 		rcView.adapter = adapter
 	}
 
-	private fun todayList(list: ArrayList<MovieDetail>) {
+	private fun initMovieTodayAdapter(list: ArrayList<MovieDetail>) {
 		binding.tvTodaySearchFragment.text = Util.capitalize("Today")
 		val adapter = MovieTodayAdapter(context, list)
 		val rcView = binding.rcTodayListSearchFragment
@@ -89,11 +96,12 @@ class SearchFragment(private val context: Activity) : Fragment(R.layout.fragment
 
 	private val movieListener = object : OnMovieClick {
 		override fun onItemClickListener(movie: MovieDetail) {
-			ItemDetailActivity.newIntent(context,movie.toString())
+			val movieObject = Gson().toJson(movie)
+			ItemDetailActivity.newIntent(context, movieObject)
 		}
 	}
 
-	private fun recommendList(list: ArrayList<MovieDetail>) {
+	private fun initMovieRecommendAdapter(list: ArrayList<MovieDetail>) {
 		binding.tvRecommendSearchFragment.text = Util.capitalize("Recommend for you")
 		val adapter = MovieAdapter(context, list, movieListener)
 		val rcView = binding.rcRecommendListSearchFragment

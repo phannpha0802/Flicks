@@ -16,7 +16,7 @@ class CarouselAdapter(private val context: Activity, private val category: Array
 	inner class ViewHolder(private val binding: CarouselLayoutBinding) :
 		RecyclerView.ViewHolder(binding.root) {
 		fun onBind(item: Carousel) {
-			context.localImage(item.image ?: R.drawable.profile_image, binding.imageCarousel)
+			context.localImage(item.image ?: R.drawable.carousel_image_2, binding.imageCarousel)
 			binding.titleCarousel.text = item.title
 			binding.releaseDateCarousel.text = item.releaseDate
 		}

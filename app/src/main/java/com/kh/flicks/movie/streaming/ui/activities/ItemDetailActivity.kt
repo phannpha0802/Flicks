@@ -19,9 +19,9 @@ class ItemDetailActivity : AppCompatActivity() {
 	private lateinit var movieDetailResponseObject: MovieDetail
 
 	companion object {
-		fun newIntent(activity: Activity?, movie: String){
+		fun newIntent(activity: Activity?, data: String?){
 			activity?.startActivity(Intent(activity, ItemDetailActivity::class.java).apply {
-				putExtra("data", movie)
+				putExtra("data", data)
 			})
 		}
 	}
@@ -50,7 +50,7 @@ class ItemDetailActivity : AppCompatActivity() {
 		binding.ratingItem.text = movie.rating.toString()
 		binding.releaseDate.text = Util.capitalize("2023")
 		binding.durationMovie.text = Util.capitalize("120 Minutes")
-		localImage(movie.image ?: R.drawable.profile_image, binding.imageBack)
-		localImage(movie.image ?: R.drawable.profile_image, binding.imageFront)
+		localImage(movie.image ?: R.drawable.carousel_image_2, binding.imageBack)
+		localImage(movie.image ?: R.drawable.carousel_image_2, binding.imageFront)
 	}
 }

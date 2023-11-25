@@ -23,7 +23,7 @@ class MovieTodayAdapter(private val context: Activity, private val movie: ArrayL
 			binding.titleMovie.text = item.title
 			binding.categoryMovie.text = item.category
 			binding.ratingMovie.text = item.rating.toString()
-			context.localImage(item.image ?: R.drawable.profile_image, binding.imageMovie)
+			context.localImage(item.image ?: R.drawable.carousel_image_2, binding.imageMovie)
 		}
 	}
 
