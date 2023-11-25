@@ -1,5 +1,7 @@
 package com.kh.flicks.movie.streaming.ui.activities
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -7,9 +9,18 @@ import androidx.databinding.DataBindingUtil
 import com.kh.flicks.movie.streaming.R
 import com.kh.flicks.movie.streaming.databinding.ActivityItemSearchedBinding
 import com.kh.flicks.movie.streaming.extensions.hideSoftKeyboard
+import com.kh.flicks.movie.streaming.networks.models.MovieDetail
 
 class ItemSearchedActivity : AppCompatActivity() {
 	private lateinit var binding: ActivityItemSearchedBinding
+
+	companion object{
+		fun newIntent(activity: Activity?, text: String?){
+			activity?.startActivity(Intent(activity, ItemSearchedActivity::class.java).apply {
+				putExtra("data",text)
+			})
+		}
+	}
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
@@ -18,7 +29,6 @@ class ItemSearchedActivity : AppCompatActivity() {
 			R.layout.activity_item_searched
 		)
 
-		// TODO: code here.
 		val bundle: Bundle? = intent.extras
 		val text = bundle?.getString("data").toString()
 		searchField(text)
