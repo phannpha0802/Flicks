@@ -53,7 +53,7 @@ class OnboardActivity : AppCompatActivity() {
 
 			// If the current item is the last item, navigate to another screen
 			if (currentItem == 2) {
-				startActivity(Intent(this, SignInActivity::class.java))
+				SignInActivity.newIntent(this)
 				finish()
 			} else {
 				// Slide the ViewPager2 to the next item

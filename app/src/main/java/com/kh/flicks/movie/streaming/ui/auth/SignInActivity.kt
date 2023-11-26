@@ -1,5 +1,7 @@
 package com.kh.flicks.movie.streaming.ui.auth
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -10,6 +12,12 @@ import com.kh.flicks.movie.streaming.extensions.hideSoftKeyboard
 
 class SignInActivity : AppCompatActivity() {
 	private lateinit var binding: ActivitySignInBinding
+
+	companion object{
+		fun newIntent(activity: Activity?){
+			activity?.startActivity(Intent(activity,SignInActivity::class.java))
+		}
+	}
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
