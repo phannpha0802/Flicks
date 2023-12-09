@@ -11,8 +11,8 @@ import com.kh.flicks.movie.streaming.databinding.ItemCategoryLayoutBinding
 import com.kh.flicks.movie.streaming.listeners.Onclick
 import com.kh.flicks.movie.streaming.networks.models.Category
 
-class CategoryAdapter(private val category: ArrayList<Category>, private val onClick: Onclick) :
-	RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
+class CategoryMovieAdapter(private val category: ArrayList<Category>, private val onClick: Onclick) :
+	RecyclerView.Adapter<CategoryMovieAdapter.ViewHolder>() {
 
 	private var currentPosition = 0
 

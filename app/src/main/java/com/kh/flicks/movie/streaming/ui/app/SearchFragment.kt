@@ -12,7 +12,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.Gson
 import com.kh.flicks.movie.streaming.R
-import com.kh.flicks.movie.streaming.adapters.CategoryAdapter
+import com.kh.flicks.movie.streaming.adapters.CategoryMovieAdapter
 import com.kh.flicks.movie.streaming.adapters.MovieAdapter
 import com.kh.flicks.movie.streaming.adapters.MovieTodayAdapter
 import com.kh.flicks.movie.streaming.databinding.FragmentSearchBinding
@@ -20,9 +20,9 @@ import com.kh.flicks.movie.streaming.listeners.OnMovieClick
 import com.kh.flicks.movie.streaming.listeners.Onclick
 import com.kh.flicks.movie.streaming.networks.models.Category
 import com.kh.flicks.movie.streaming.networks.models.MovieDetail
-import com.kh.flicks.movie.streaming.ui.activities.ItemCategoryActivity
-import com.kh.flicks.movie.streaming.ui.activities.ItemDetailActivity
-import com.kh.flicks.movie.streaming.ui.activities.ItemSearchedActivity
+import com.kh.flicks.movie.streaming.ui.activities.CategoryMovieActivity
+import com.kh.flicks.movie.streaming.ui.activities.DetailMovieActivity
+import com.kh.flicks.movie.streaming.ui.activities.SearchedMovieActivity
 import com.kh.flicks.movie.streaming.utils.Util
 import com.kh.flicks.movie.streaming.vm.SearchViewModel
 import kotlinx.coroutines.launch
@@ -60,7 +60,7 @@ class SearchFragment(private val context: Activity) : Fragment(R.layout.fragment
 			if (actionId == EditorInfo.IME_ACTION_SEARCH) {
 				val text = binding.searchField.text.toString().trim()
 				if (text.isNotEmpty()) {
-					context.startActivity(Intent(context, ItemSearchedActivity::class.java).apply {
+					context.startActivity(Intent(context, SearchedMovieActivity::class.java).apply {
 						putExtra("data", text)
 					})
 					return@setOnEditorActionListener true
@@ -70,17 +70,14 @@ class SearchFragment(private val context: Activity) : Fragment(R.layout.fragment
 		}
 	}
 
-	private val categoryListener = object : Onclick {
+	private val categoryMovieListener = object : Onclick {
 		override fun onItemClickLister(item: Category) {
-			// TODO: navigate to ItemCategoryActivity.
-			context.startActivity(Intent(context, ItemCategoryActivity::class.java).apply {
-				putExtra("data", item.name.toString())
-			})
+			CategoryMovieActivity.newIntent(context,item.name)
 		}
 	}
 
 	private fun categoryList(list: ArrayList<Category>) {
-		val adapter = CategoryAdapter(list, categoryListener)
+		val adapter = CategoryMovieAdapter(list, categoryMovieListener)
 		val rcView = binding.rcCategoryListSearchFragment
 		rcView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
 		rcView.adapter = adapter
@@ -97,7 +94,7 @@ class SearchFragment(private val context: Activity) : Fragment(R.layout.fragment
 	private val movieListener = object : OnMovieClick {
 		override fun onItemClickListener(movie: MovieDetail) {
 			val movieObject = Gson().toJson(movie)
-			ItemDetailActivity.newIntent(context, movieObject)
+			DetailMovieActivity.newIntent(context, movieObject)
 		}
 	}
 

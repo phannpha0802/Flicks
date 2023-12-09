@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.kh.flicks.movie.streaming.R
 import com.kh.flicks.movie.streaming.networks.models.Category
 import com.kh.flicks.movie.streaming.networks.models.MovieDetail
+import com.kh.flicks.movie.streaming.networks.models.MovieEpisode
 import com.kh.flicks.movie.streaming.networks.repo.CategoryRepo
 import com.kh.flicks.movie.streaming.networks.repo.MovieDetailRepo
 import kotlinx.coroutines.launch
@@ -55,11 +56,14 @@ class SearchViewModel : ViewModel() {
 			MovieDetail(
 				3,
 				"The boy fly to the moon.",
-				R.drawable.carousel_image_1,
+				R.drawable.banner_img_4,
 				"This is the story that talk about The boy fly to the moon.",
 				"20 Oct, 2021",
-				4.3,
-				"Animation"
+				4.3f,
+				"Animation",
+				episode = listOf(
+					MovieEpisode(1,1, "")
+				)
 			)
 		)
 
@@ -76,33 +80,57 @@ class SearchViewModel : ViewModel() {
 			MovieDetail(
 				1,
 				"The handsome boy in my school.",
-				R.drawable.carousel_image_1,
+				R.drawable.banner_img_5,
 				"This is the story that talk about the handsome boy in my school.",
 				"12 November, 2023",
-				3.4,
-				"Animation"
+				3.4f,
+				"Animation",
+				episode = listOf(
+					MovieEpisode(1,1, "")
+				)
 			)
 		)
 		list.add(
 			MovieDetail(
 				2,
 				"The boy fly to the moon.",
-				R.drawable.carousel_image_2,
+				R.drawable.banner_img_6,
 				"This is the story that talk about The boy fly to the moon.",
 				"20 Oct, 2021",
-				4.0,
-				"Animation"
+				4.0f,
+				"Animation",
+				episode = listOf(
+					MovieEpisode(1,1, "")
+				)
 			)
 		)
 		list.add(
 			MovieDetail(
 				3,
 				"The boy fly to the moon.",
-				R.drawable.carousel_image_1,
+				R.drawable.banner_img_7,
 				"This is the story that talk about The boy fly to the moon.",
 				"20 Oct, 2021",
-				4.3,
-				"Animation"
+				4.3f,
+				"Animation",
+				episode = listOf(
+					MovieEpisode(1,1, "")
+				)
+			)
+		)
+
+		list.add(
+			MovieDetail(
+				3,
+				"The boy fly to the moon.",
+				R.drawable.banner_img_8,
+				"This is the story that talk about The boy fly to the moon.",
+				"20 Oct, 2021",
+				4.3f,
+				"Animation",
+				episode = listOf(
+					MovieEpisode(1,1, "")
+				)
 			)
 		)
 

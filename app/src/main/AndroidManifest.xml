@@ -13,30 +13,24 @@
 		android:theme="@style/Theme.Flicks"
 		tools:targetApi="31">
 		<activity
-			android:name=".ui.activities.ItemFavoriteActivity"
+			android:name=".ui.activities.FavoriteMovieActivity"
 			android:exported="false"
 			android:screenOrientation="locked"/>
 		<activity
-			android:name=".ui.activities.ItemCategoryActivity"
+			android:name=".ui.activities.CategoryMovieActivity"
 			android:exported="false"
 			android:screenOrientation="locked"/>
 		<activity
-			android:name=".ui.activities.ItemDetailActivity"
+			android:name=".ui.activities.DetailMovieActivity"
 			android:exported="false"
 			android:screenOrientation="locked"/>
 		<activity
-			android:name=".ui.activities.ItemSearchedActivity"
+			android:name=".ui.activities.SearchedMovieActivity"
 			android:exported="false"
 			android:screenOrientation="locked"/>
 		<activity
 			android:name=".ui.auth.SplashActivity"
-			android:exported="true">
-			<intent-filter>
-				<action android:name="android.intent.action.MAIN" />
-
-				<category android:name="android.intent.category.LAUNCHER" />
-			</intent-filter>
-		</activity>
+			android:exported="false"/>
 		<activity
 			android:name=".ui.auth.SignInActivity"
 			android:exported="false"
@@ -52,7 +46,13 @@
 		<activity
 			android:name=".MainActivity"
 			android:exported="true"
-			android:screenOrientation="locked"/>
+			android:screenOrientation="locked">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
 	</application>
 
 </manifest>
