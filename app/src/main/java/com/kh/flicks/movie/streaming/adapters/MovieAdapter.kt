@@ -24,7 +24,7 @@ class MovieAdapter(
 			binding.titleItem.text = item.title
 			binding.categoryItem.text = item.category
 			binding.ratingItem.text = item.rating.toString()
-			context.localImage(item.image ?: R.drawable.profile_image, binding.imageItem)
+			context.localImage(item.image ?: R.drawable.carousel_image_2, binding.imageItem)
 
 			// movie selected listener.
 			binding.imageItem.setOnClickListener {

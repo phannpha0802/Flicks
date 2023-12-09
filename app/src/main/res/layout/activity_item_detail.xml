@@ -31,12 +31,13 @@
 						android:layout_width="match_parent"
 						android:layout_height="match_parent"
 						android:scaleType="centerCrop"
-						android:src="@drawable/profile_image" />
+						android:src="@drawable/carousel_image_2" />
 
 					<ImageView
 						android:layout_width="match_parent"
 						android:layout_height="match_parent"
 						android:scaleType="centerCrop"
+						android:contentDescription="@null"
 						android:src="@drawable/detail_overlay_image" />
 
 					<com.google.android.material.imageview.ShapeableImageView
@@ -45,7 +46,7 @@
 						android:layout_height="287dp"
 						android:layout_centerInParent="true"
 						android:scaleType="centerCrop"
-						android:src="@drawable/profile_image"
+						android:src="@drawable/carousel_image_2"
 						app:shapeAppearanceOverlay="@style/Circular5" />
 
 					<LinearLayout
@@ -65,6 +66,7 @@
 							<ImageView
 								android:layout_width="16dp"
 								android:layout_height="16dp"
+								android:contentDescription="@null"
 								android:src="@drawable/calendar_image"
 								app:tint="@color/grey_color" />
 
@@ -89,6 +91,7 @@
 							<ImageView
 								android:layout_width="16dp"
 								android:layout_height="16dp"
+								android:contentDescription="@null"
 								android:src="@drawable/clock_image"
 								app:tint="@color/grey_color" />
 
@@ -113,6 +116,7 @@
 							<ImageView
 								android:layout_width="16dp"
 								android:layout_height="16dp"
+								android:contentDescription="@null"
 								android:src="@drawable/film_image"
 								app:tint="@color/grey_color" />
 
@@ -182,6 +186,7 @@
 								android:layout_width="16dp"
 								android:layout_height="16dp"
 								android:layout_marginEnd="8dp"
+								android:contentDescription="@null"
 								android:src="@drawable/play_icon"
 								app:tint="@color/white_grey_color" />
 
@@ -200,6 +205,7 @@
 							android:id="@+id/buttonDownload"
 							android:layout_width="48dp"
 							android:layout_height="48dp"
+							android:contentDescription="@null"
 							android:layout_marginHorizontal="16dp"
 							android:background="@drawable/circle_bg"
 							android:padding="12dp"
@@ -212,6 +218,7 @@
 							android:layout_height="48dp"
 							android:background="@drawable/circle_bg"
 							android:padding="12dp"
+							android:contentDescription="@null"
 							android:src="@drawable/share_icon"
 							app:tint="@color/blue_accent_color" />
 					</LinearLayout>

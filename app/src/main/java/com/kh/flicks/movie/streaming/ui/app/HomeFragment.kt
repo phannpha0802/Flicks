@@ -2,7 +2,6 @@ package com.kh.flicks.movie.streaming.ui.app
 
 import android.annotation.SuppressLint
 import android.app.Activity
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.EditorInfo
@@ -19,9 +18,9 @@ import com.kh.flicks.movie.streaming.adapters.CarouselAdapter
 import com.kh.flicks.movie.streaming.adapters.CategoryAdapter
 import com.kh.flicks.movie.streaming.adapters.MovieAdapter
 import com.kh.flicks.movie.streaming.databinding.FragmentHomeBinding
+import com.kh.flicks.movie.streaming.extensions.autoScroll
 import com.kh.flicks.movie.streaming.extensions.hideSoftKeyboard
 import com.kh.flicks.movie.streaming.extensions.localImage
-import com.kh.flicks.movie.streaming.extensions.autoScroll
 import com.kh.flicks.movie.streaming.listeners.OnMovieClick
 import com.kh.flicks.movie.streaming.listeners.Onclick
 import com.kh.flicks.movie.streaming.networks.models.Carousel
@@ -44,18 +43,24 @@ class HomeFragment(private val context: Activity) : Fragment(R.layout.fragment_h
 	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 		super.onViewCreated(view, savedInstanceState)
 		binding = FragmentHomeBinding.bind(view)
-		homeViewModel = ViewModelProvider(this)[HomeViewModel::class.java]
+		initObject()
+		observeViewModel()
+	}
 
-		// TODO: code here.
+	private fun initObject() { // init all object
+		homeViewModel = ViewModelProvider(this)[HomeViewModel::class.java]
 		hideSoftKeyboardFromWindow()
 		appBar()
 		searchField()
 		buttonFavorite()
+	}
+
+	private fun observeViewModel() {  // observe view model.
 		lifecycleScope.launch {
 			homeViewModel.uiState.observe(viewLifecycleOwner) { item ->
 				imageCarousel(item.carousel)
-				categoryList(item.category)
-				popularList(item.popularItem)
+				initCategoryAdapter(item.category)
+				initPopularMovieAdapter(item.popularItem)
 			}
 		}
 	}
@@ -67,26 +72,24 @@ class HomeFragment(private val context: Activity) : Fragment(R.layout.fragment_h
 	}
 
 	@SuppressLint("SetTextI18n")
-	private fun appBar() {
-		context.localImage(R.drawable.profile_image, binding.profileImageHomeFragment)
+	private fun appBar() {  // top bar
+		context.localImage(R.drawable.profile_img, binding.profileImageHomeFragment)
 		binding.userNameHomeFragment.text = Util.capitalize("Hello, Davide!")
 		binding.greetingTextHomeFragment.text = "Let's stream your favorite movies."
 	}
 
-	private fun buttonFavorite() {
+	private fun buttonFavorite() { // button favorite.
 		binding.buttonFavoriteHomeFragment.setOnClickListener {
-			context.startActivity(Intent(context,ItemFavoriteActivity::class.java))
+			ItemFavoriteActivity.newIntent(context)
 		}
 	}
 
-	private fun searchField() {
+	private fun searchField() { // search field.
 		binding.searchFieldHomeFragment.setOnEditorActionListener { _, actionId, _ ->
 			if (actionId == EditorInfo.IME_ACTION_SEARCH) {
 				val text = binding.searchFieldHomeFragment.text.toString().trim()
 				if (text.isNotEmpty()) {
-					context.startActivity(Intent(context, ItemSearchedActivity::class.java).apply {
-						putExtra("data", text)
-					})
+					ItemSearchedActivity.newIntent(context,text)
 					return@setOnEditorActionListener true
 				}
 			}
@@ -94,7 +97,7 @@ class HomeFragment(private val context: Activity) : Fragment(R.layout.fragment_h
 		}
 	}
 
-	private fun imageCarousel(list: ArrayList<Carousel>) {
+	private fun imageCarousel(list: ArrayList<Carousel>) { // carousel image slider.
 		val adapter = CarouselAdapter(context, list)
 		val viewPager = binding.carouselImageSliderHomeFragment
 
@@ -118,14 +121,11 @@ class HomeFragment(private val context: Activity) : Fragment(R.layout.fragment_h
 
 	private val categoryListener = object : Onclick {
 		override fun onItemClickLister(item: Category) {
-			// TODO: navigate to ItemCategoryActivity.
-			context.startActivity(Intent(context, ItemCategoryActivity::class.java).apply {
-				putExtra("data", item.name.toString())
-			})
+			ItemCategoryActivity.newIntent(context,item.name.toString())
 		}
 	}
 
-	private fun categoryList(list: ArrayList<Category>) {
+	private fun initCategoryAdapter(list: ArrayList<Category>) {
 		binding.tvCategoryHomeFragment.text = Util.capitalize("Categories")
 
 		val adapter = CategoryAdapter(list, categoryListener)
@@ -137,11 +137,11 @@ class HomeFragment(private val context: Activity) : Fragment(R.layout.fragment_h
 	private val movieListener = object : OnMovieClick {
 		override fun onItemClickListener(movie: MovieDetail) {
 			val movieObject = Gson().toJson(movie)
-			ItemDetailActivity.newIntent(context,movieObject)
+			ItemDetailActivity.newIntent(context, movieObject)
 		}
 	}
 
-	private fun popularList(list: ArrayList<MovieDetail>) {
+	private fun initPopularMovieAdapter(list: ArrayList<MovieDetail>) {
 		binding.tvPopularHomeFragment.text = Util.capitalize("Most Popular")
 
 		val adapter = MovieAdapter(context, list, movieListener)

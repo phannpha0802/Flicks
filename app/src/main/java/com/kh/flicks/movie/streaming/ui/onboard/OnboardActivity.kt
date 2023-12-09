@@ -1,6 +1,5 @@
 package com.kh.flicks.movie.streaming.ui.onboard
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -14,12 +13,10 @@ import com.kh.flicks.movie.streaming.ui.auth.SignInActivity
 class OnboardActivity : AppCompatActivity() {
 	private lateinit var binding: ActivityOnboardBinding
 
-	@SuppressLint("SetTextI18n")
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		binding = DataBindingUtil.setContentView(this, R.layout.activity_onboard)
 
-		// TODO: code here.
 		val adapter = OnboardAdapter(this)
 		adapter.addFragment(
 			OnboardV1Fragment(),
@@ -56,7 +53,7 @@ class OnboardActivity : AppCompatActivity() {
 
 			// If the current item is the last item, navigate to another screen
 			if (currentItem == 2) {
-				startActivity(Intent(this, SignInActivity::class.java))
+				SignInActivity.newIntent(this)
 				finish()
 			} else {
 				// Slide the ViewPager2 to the next item
