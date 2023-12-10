@@ -9,14 +9,15 @@
 		android:background="@color/dark_color"
 		tools:context=".ui.auth.SignInActivity">
 
-		<ScrollView android:layout_width="match_parent"
+		<ScrollView
+			android:layout_width="match_parent"
 			android:layout_height="match_parent"
 			android:background="@color/dark_color"
 			android:scrollbarSize="0dp"
 			tools:context=".ui.auths.LoginActivity">
 
 			<LinearLayout
-				android:id="@+id/mainContainerLoginScreen"
+				android:id="@+id/mainContainerSignIn"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:orientation="vertical">
@@ -40,19 +41,19 @@
 						android:text="Sign In"
 						android:textColor="@color/white_grey_color"
 						android:textSize="18sp" />
-			<TextView
 
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_centerHorizontal="true"
-				android:layout_centerVertical="true"
-				android:layout_marginHorizontal="12dp"
-				android:ellipsize="end"
-				android:fontFamily="@font/montserrat_semi_bold"
-				android:maxLines="1"
-				android:text="Login"
-				android:textColor="@color/white_color"
-				android:textSize="18sp" />
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerHorizontal="true"
+						android:layout_centerVertical="true"
+						android:layout_marginHorizontal="12dp"
+						android:ellipsize="end"
+						android:fontFamily="@font/montserrat_semi_bold"
+						android:maxLines="1"
+						android:text="Sign In"
+						android:textColor="@color/white_color"
+						android:textSize="18sp" />
 
 				</RelativeLayout>
 
@@ -68,16 +69,9 @@
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:fontFamily="@font/montserrat_semi_bold"
-						android:text="Hi, "
+						android:text="Hi, Dear"
 						android:textColor="@color/white_color"
 						android:textSize="24sp" />
-			<TextView
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:fontFamily="@font/montserrat_semi_bold"
-				android:text="Hi, Davide"
-				android:textColor="@color/white_color"
-				android:textSize="24sp" />
 
 					<TextView
 						android:layout_width="wrap_content"
@@ -192,7 +186,7 @@
 					android:orientation="vertical">
 
 					<Button
-						android:id="@+id/btnLogin"
+						android:id="@+id/btnSignIn"
 						android:layout_width="match_parent"
 						android:layout_height="60dp"
 						android:backgroundTint="@color/blue_accent_color"
@@ -217,17 +211,15 @@
 							android:textColor="@color/white_color" />
 
 						<TextView
-							android:id="@+id/tvRegister"
+							android:id="@+id/tvSingUp"
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
 							android:fontFamily="@font/montserrat_medium"
-							android:text="Register"
+							android:text="Sign Up"
 							android:textColor="@color/blue_accent_color" />
 					</LinearLayout>
 				</LinearLayout>
 			</LinearLayout>
-
 		</ScrollView>
-
 	</androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

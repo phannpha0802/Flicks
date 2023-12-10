@@ -108,7 +108,6 @@ class HomeFragment(private val context: Activity) : Fragment(R.layout.fragment_h
 		val compositePageTransform = CompositePageTransformer()
 		compositePageTransform.addTransformer(MarginPageTransformer(20))
 		compositePageTransform.addTransformer { page, position ->
-			// TODO: transform page here.
 			val r = 1 - abs(position)
 			page.scaleY = 0.85f + r * 0.15f
 		}
