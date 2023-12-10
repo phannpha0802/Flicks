@@ -6,6 +6,8 @@ data class MovieDetail(
 	var image: Int?,
 	var desc: String?,
 	var releaseDate: String?,
-	var rating: Double?,
-	var category: String?
+	var rating: Float? = 0f,
+	var category: String?,
+	var duration: Float? = 0f,
+	var episode: List<MovieEpisode>?
 )

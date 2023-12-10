@@ -8,6 +8,7 @@ import com.kh.flicks.movie.streaming.R
 import com.kh.flicks.movie.streaming.networks.models.Carousel
 import com.kh.flicks.movie.streaming.networks.models.Category
 import com.kh.flicks.movie.streaming.networks.models.MovieDetail
+import com.kh.flicks.movie.streaming.networks.models.MovieEpisode
 import com.kh.flicks.movie.streaming.networks.repo.CarouselRepo
 import com.kh.flicks.movie.streaming.networks.repo.CategoryRepo
 import com.kh.flicks.movie.streaming.networks.repo.MovieDetailRepo
@@ -42,7 +43,7 @@ class HomeViewModel : ViewModel() {
 			Carousel(
 				1,
 				"Black Panther: Wakanda Forever",
-				R.drawable.carousel_image_1,
+				R.drawable.banner_img_4,
 				"20, November 2023"
 			)
 		)
@@ -50,7 +51,7 @@ class HomeViewModel : ViewModel() {
 			Carousel(
 				2,
 				"Black Panther: Wakanda Forever",
-				R.drawable.carousel_image_2,
+				R.drawable.banner_img_10,
 				"10, Oct 2021"
 			)
 		)
@@ -58,7 +59,7 @@ class HomeViewModel : ViewModel() {
 			Carousel(
 				3,
 				"Black Panther: Wakanda Forever",
-				R.drawable.carousel_image_1,
+				R.drawable.banner_img_1,
 				"04, Aug 2020"
 			)
 		)
@@ -91,33 +92,98 @@ class HomeViewModel : ViewModel() {
 			MovieDetail(
 				1,
 				"The handsome boy in my school.",
-				R.drawable.carousel_image_1,
+				R.drawable.banner_img_4,
 				"This is the story that talk about the handsome boy in my school.",
 				"12 November, 2023",
-				3.4,
-				"Animation"
+				3.4f,
+				"Animation",
+				episode = listOf(
+					MovieEpisode(1,1, "")
+				)
 			)
 		)
 		list.add(
 			MovieDetail(
 				2,
 				"The boy fly to the moon.",
-				R.drawable.carousel_image_2,
+				R.drawable.banner_img_5,
 				"This is the story that talk about The boy fly to the moon.",
 				"20 Oct, 2021",
-				4.0,
-				"Animation"
+				4.0f,
+				"Animation",
+				episode = listOf(
+					MovieEpisode(2,2, "")
+				)
 			)
 		)
 		list.add(
 			MovieDetail(
 				3,
 				"The boy fly to the moon.",
-				R.drawable.carousel_image_1,
+				R.drawable.banner_img_6,
 				"This is the story that talk about The boy fly to the moon.",
 				"20 Oct, 2021",
-				4.3,
-				"Animation"
+				4.3f,
+				"Animation",
+				episode = listOf(
+					MovieEpisode(3,3, "")
+				)
+			)
+		)
+		list.add(
+			MovieDetail(
+				3,
+				"The boy fly to the moon.",
+				R.drawable.banner_img_7,
+				"This is the story that talk about The boy fly to the moon.",
+				"20 Oct, 2021",
+				4.3f,
+				"Animation",
+				episode = listOf(
+					MovieEpisode(4,4, "")
+				)
+			)
+		)
+		list.add(
+			MovieDetail(
+				3,
+				"The boy fly to the moon.",
+				R.drawable.banner_img_8,
+				"This is the story that talk about The boy fly to the moon.",
+				"20 Oct, 2021",
+				4.3f,
+				"Animation",
+				episode = listOf(
+					MovieEpisode(5,5, "")
+				)
+			)
+		)
+		list.add(
+			MovieDetail(
+				3,
+				"The boy fly to the moon.",
+				R.drawable.banner_img_9,
+				"This is the story that talk about The boy fly to the moon.",
+				"20 Oct, 2021",
+				4.3f,
+				"Animation",
+				episode = listOf(
+					MovieEpisode(6,6, "")
+				)
+			)
+		)
+		list.add(
+			MovieDetail(
+				3,
+				"The boy fly to the moon.",
+				R.drawable.banner_img_10,
+				"This is the story that talk about The boy fly to the moon.",
+				"20 Oct, 2021",
+				4.3f,
+				"Animation",
+				episode = listOf(
+					MovieEpisode(7,7, "")
+				)
 			)
 		)
 

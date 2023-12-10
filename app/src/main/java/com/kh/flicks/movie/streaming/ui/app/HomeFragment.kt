@@ -15,7 +15,7 @@ import androidx.viewpager2.widget.MarginPageTransformer
 import com.google.gson.Gson
 import com.kh.flicks.movie.streaming.R
 import com.kh.flicks.movie.streaming.adapters.CarouselAdapter
-import com.kh.flicks.movie.streaming.adapters.CategoryAdapter
+import com.kh.flicks.movie.streaming.adapters.CategoryMovieAdapter
 import com.kh.flicks.movie.streaming.adapters.MovieAdapter
 import com.kh.flicks.movie.streaming.databinding.FragmentHomeBinding
 import com.kh.flicks.movie.streaming.extensions.autoScroll
@@ -26,10 +26,10 @@ import com.kh.flicks.movie.streaming.listeners.Onclick
 import com.kh.flicks.movie.streaming.networks.models.Carousel
 import com.kh.flicks.movie.streaming.networks.models.Category
 import com.kh.flicks.movie.streaming.networks.models.MovieDetail
-import com.kh.flicks.movie.streaming.ui.activities.ItemCategoryActivity
-import com.kh.flicks.movie.streaming.ui.activities.ItemDetailActivity
-import com.kh.flicks.movie.streaming.ui.activities.ItemFavoriteActivity
-import com.kh.flicks.movie.streaming.ui.activities.ItemSearchedActivity
+import com.kh.flicks.movie.streaming.ui.activities.CategoryMovieActivity
+import com.kh.flicks.movie.streaming.ui.activities.DetailMovieActivity
+import com.kh.flicks.movie.streaming.ui.activities.FavoriteMovieActivity
+import com.kh.flicks.movie.streaming.ui.activities.SearchedMovieActivity
 import com.kh.flicks.movie.streaming.utils.Util
 import com.kh.flicks.movie.streaming.vm.HomeViewModel
 import kotlinx.coroutines.launch
@@ -80,7 +80,7 @@ class HomeFragment(private val context: Activity) : Fragment(R.layout.fragment_h
 
 	private fun buttonFavorite() { // button favorite.
 		binding.buttonFavoriteHomeFragment.setOnClickListener {
-			ItemFavoriteActivity.newIntent(context)
+			FavoriteMovieActivity.newIntent(context)
 		}
 	}
 
@@ -89,7 +89,7 @@ class HomeFragment(private val context: Activity) : Fragment(R.layout.fragment_h
 			if (actionId == EditorInfo.IME_ACTION_SEARCH) {
 				val text = binding.searchFieldHomeFragment.text.toString().trim()
 				if (text.isNotEmpty()) {
-					ItemSearchedActivity.newIntent(context,text)
+					SearchedMovieActivity.newIntent(context,text)
 					return@setOnEditorActionListener true
 				}
 			}
@@ -108,7 +108,6 @@ class HomeFragment(private val context: Activity) : Fragment(R.layout.fragment_h
 		val compositePageTransform = CompositePageTransformer()
 		compositePageTransform.addTransformer(MarginPageTransformer(20))
 		compositePageTransform.addTransformer { page, position ->
-			// TODO: transform page here.
 			val r = 1 - abs(position)
 			page.scaleY = 0.85f + r * 0.15f
 		}
@@ -119,32 +118,32 @@ class HomeFragment(private val context: Activity) : Fragment(R.layout.fragment_h
 		viewPager.autoScroll(5000)
 	}
 
-	private val categoryListener = object : Onclick {
+	private val categoryMovieListener = object : Onclick {
 		override fun onItemClickLister(item: Category) {
-			ItemCategoryActivity.newIntent(context,item.name.toString())
+			CategoryMovieActivity.newIntent(context,item.name.toString())
 		}
 	}
 
 	private fun initCategoryAdapter(list: ArrayList<Category>) {
 		binding.tvCategoryHomeFragment.text = Util.capitalize("Categories")
 
-		val adapter = CategoryAdapter(list, categoryListener)
+		val adapter = CategoryMovieAdapter(list, categoryMovieListener)
 		val rcView = binding.rcCategoryListHomeFragment
 		rcView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
 		rcView.adapter = adapter
 	}
 
-	private val movieListener = object : OnMovieClick {
+	private val popularMovieListener = object : OnMovieClick {
 		override fun onItemClickListener(movie: MovieDetail) {
 			val movieObject = Gson().toJson(movie)
-			ItemDetailActivity.newIntent(context, movieObject)
+			DetailMovieActivity.newIntent(context, movieObject)
 		}
 	}
 
 	private fun initPopularMovieAdapter(list: ArrayList<MovieDetail>) {
 		binding.tvPopularHomeFragment.text = Util.capitalize("Most Popular")
 
-		val adapter = MovieAdapter(context, list, movieListener)
+		val adapter = MovieAdapter(context, list, popularMovieListener)
 		val rcView = binding.rcPopularListHomeFragment
 		rcView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
 		rcView.adapter = adapter

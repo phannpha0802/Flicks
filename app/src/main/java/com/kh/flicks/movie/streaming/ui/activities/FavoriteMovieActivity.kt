@@ -6,21 +6,20 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import com.kh.flicks.movie.streaming.R
-import com.kh.flicks.movie.streaming.databinding.ActivityItemFavoriteBinding
+import com.kh.flicks.movie.streaming.databinding.ActivityFavoriteMovieBinding
 
-class ItemFavoriteActivity : AppCompatActivity() {
-	private lateinit var binding: ActivityItemFavoriteBinding
+class FavoriteMovieActivity : AppCompatActivity() {
+	private lateinit var binding: ActivityFavoriteMovieBinding
 
 	companion object{
 		fun newIntent(activity: Activity?){
-			activity?.startActivity(Intent(activity, ItemDetailActivity::class.java))
+			activity?.startActivity(Intent(activity, FavoriteMovieActivity::class.java))
 		}
 	}
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
-		binding = DataBindingUtil.setContentView(this, R.layout.activity_item_favorite)
+		binding = DataBindingUtil.setContentView(this, R.layout.activity_favorite_movie)
 
-		// TODO: code here.
 	}
 }

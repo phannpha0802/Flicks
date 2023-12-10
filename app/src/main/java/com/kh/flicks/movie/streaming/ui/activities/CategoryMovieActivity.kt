@@ -6,15 +6,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import com.kh.flicks.movie.streaming.R
-import com.kh.flicks.movie.streaming.databinding.ActivityItemCategoryBinding
+import com.kh.flicks.movie.streaming.databinding.ActivityCategoryMovieBinding
 import com.kh.flicks.movie.streaming.extensions.toastMessage
 
-class ItemCategoryActivity : AppCompatActivity() {
-	private lateinit var binding: ActivityItemCategoryBinding
+class CategoryMovieActivity : AppCompatActivity() {
+	private lateinit var binding: ActivityCategoryMovieBinding
 
 	companion object {
 		fun newIntent(activity: Activity?, data: String?){
-			activity?.startActivity(Intent(activity, ItemCategoryActivity::class.java).apply {
+			activity?.startActivity(Intent(activity, CategoryMovieActivity::class.java).apply {
 				putExtra("data", data)
 			})
 		}
@@ -22,7 +22,7 @@ class ItemCategoryActivity : AppCompatActivity() {
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
-		binding = DataBindingUtil.setContentView(this, R.layout.activity_item_category)
+		binding = DataBindingUtil.setContentView(this, R.layout.activity_category_movie)
 		initObject()
 	}
 

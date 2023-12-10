@@ -13,19 +13,19 @@
 		android:theme="@style/Theme.Flicks"
 		tools:targetApi="31">
 		<activity
-			android:name=".ui.activities.ItemFavoriteActivity"
+			android:name=".ui.activities.FavoriteMovieActivity"
 			android:exported="false"
 			android:screenOrientation="locked"/>
 		<activity
-			android:name=".ui.activities.ItemCategoryActivity"
+			android:name=".ui.activities.CategoryMovieActivity"
 			android:exported="false"
 			android:screenOrientation="locked"/>
 		<activity
-			android:name=".ui.activities.ItemDetailActivity"
+			android:name=".ui.activities.DetailMovieActivity"
 			android:exported="false"
 			android:screenOrientation="locked"/>
 		<activity
-			android:name=".ui.activities.ItemSearchedActivity"
+			android:name=".ui.activities.SearchedMovieActivity"
 			android:exported="false"
 			android:screenOrientation="locked"/>
 		<activity
@@ -51,7 +51,7 @@
 			android:screenOrientation="locked"/>
 		<activity
 			android:name=".MainActivity"
-			android:exported="true"
+			android:exported="false"
 			android:screenOrientation="locked"/>
 	</application>
 

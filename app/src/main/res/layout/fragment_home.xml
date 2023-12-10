@@ -110,7 +110,6 @@
 					android:layout_width="0dp"
 					android:layout_height="match_parent"
 					android:layout_weight="1"
-					android:autofillHints="name"
 					android:background="@null"
 					android:hint="Search title"
 					android:imeOptions="actionSearch"
@@ -176,16 +175,38 @@
 				app:layout_constraintStart_toStartOf="parent"
 				app:layout_constraintTop_toBottomOf="@id/carouselImageSliderHomeFragment">
 
-				<TextView
-					android:id="@+id/tvCategoryHomeFragment"
-					android:layout_width="wrap_content"
+				<LinearLayout
+					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
-					android:ellipsize="end"
-					android:maxLines="1"
-					android:textColor="@color/white_grey_color"
-					android:textSize="16sp"
-					android:textStyle="bold"
-					tools:text="Categories" />
+					android:gravity="center_vertical">
+					<TextView
+						android:id="@+id/tvCategoryHomeFragment"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:ellipsize="end"
+						android:maxLines="1"
+						android:textColor="@color/white_grey_color"
+						android:textSize="16sp"
+						android:textStyle="bold"
+						tools:text="Categories" />
+
+					<Space
+						android:layout_width="0dp"
+						android:layout_height="0dp"
+						android:layout_weight="1"/>
+
+					<TextView
+						android:id="@+id/tvSeeMore"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:ellipsize="end"
+						android:maxLines="1"
+						android:layout_marginEnd="12dp"
+						android:textColor="@color/blue_accent_color"
+						android:textSize="12sp"
+						android:text="view all" />
+
+				</LinearLayout>
 
 				<androidx.recyclerview.widget.RecyclerView
 					android:id="@+id/rcCategoryListHomeFragment"
@@ -207,26 +228,49 @@
 				app:layout_constraintStart_toStartOf="parent"
 				app:layout_constraintTop_toBottomOf="@id/containerCategoryList">
 
-				<TextView
-					android:id="@+id/tvPopularHomeFragment"
-					android:layout_width="wrap_content"
+				<LinearLayout
+					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
-					android:ellipsize="end"
-					android:maxLines="1"
-					android:textColor="@color/white_grey_color"
-					android:textSize="16sp"
-					android:textStyle="bold"
-					tools:text="Most Popular" />
+					android:gravity="center_vertical">
+					<TextView
+						android:id="@+id/tvPopularHomeFragment"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:ellipsize="end"
+						android:maxLines="1"
+						android:textColor="@color/white_grey_color"
+						android:textSize="16sp"
+						android:textStyle="bold"
+						tools:text="Most Popular" />
+
+					<Space
+						android:layout_width="0dp"
+						android:layout_height="0dp"
+						android:layout_weight="1"/>
+
+					<TextView
+						android:id="@+id/tvSeeMorePopularMovie"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:ellipsize="end"
+						android:maxLines="1"
+						android:layout_marginEnd="12dp"
+						android:textColor="@color/blue_accent_color"
+						android:textSize="12sp"
+						android:text="view all" />
+
+				</LinearLayout>
 
 				<androidx.recyclerview.widget.RecyclerView
 					android:id="@+id/rcPopularListHomeFragment"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
-					android:layout_marginTop="16dp" />
+					android:layout_marginTop="24dp" />
 			</LinearLayout>
 			<!--		Popular list end-->
 
 		</androidx.constraintlayout.widget.ConstraintLayout>
 
 	</androidx.core.widget.NestedScrollView>
+
 </layout>

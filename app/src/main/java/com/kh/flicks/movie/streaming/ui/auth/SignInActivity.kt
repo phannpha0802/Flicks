@@ -23,26 +23,30 @@ class SignInActivity : AppCompatActivity() {
 		super.onCreate(savedInstanceState)
 		binding = DataBindingUtil
 			.setContentView(this, R.layout.activity_sign_in)
+		initObject()
+	}
+
+	private fun initObject(){
 		hideSoftKeyboardFromWindow()
 		buttonLogin()
 		buttonRegister()
 	}
 
 	private fun hideSoftKeyboardFromWindow(){
-		binding.mainContainerLoginScreen.setOnClickListener {
+		binding.mainContainerSignIn.setOnClickListener {
 			hideSoftKeyboard()
 		}
 	}
 
 	private fun buttonLogin(){
-		binding.btnLogin.setOnClickListener {
+		binding.btnSignIn.setOnClickListener {
 			MainActivity.newIntent(this)
 			finish()
 		}
 	}
 
 	private fun buttonRegister(){
-		binding.tvRegister.setOnClickListener {
+		binding.tvSingUp.setOnClickListener {
 			SignUpActivity.newIntent(this)
 		}
 	}

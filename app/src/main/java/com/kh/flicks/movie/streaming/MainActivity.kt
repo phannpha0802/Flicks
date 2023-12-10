@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.kh.flicks.movie.streaming.databinding.ActivityMainBinding
-import com.kh.flicks.movie.streaming.ui.activities.ItemDetailActivity
 import com.kh.flicks.movie.streaming.ui.app.DownloadFragment
 import com.kh.flicks.movie.streaming.ui.app.HomeFragment
 import com.kh.flicks.movie.streaming.ui.app.ProfileFragment

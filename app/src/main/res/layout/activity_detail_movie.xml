@@ -7,7 +7,7 @@
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		android:background="@color/dark_color"
-		tools:context=".ui.activities.ItemDetailActivity">
+		tools:context=".ui.activities.DetailMovieActivity">
 
 		<androidx.core.widget.NestedScrollView
 			android:layout_width="match_parent"
@@ -160,7 +160,7 @@
 							android:stepSize="0.1" />
 
 						<TextView
-							android:id="@+id/ratingItem"
+							android:id="@+id/ratingMovie"
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
 							android:fontFamily="@font/montserrat_semi_bold"
@@ -176,7 +176,7 @@
 						android:gravity="center_horizontal">
 
 						<LinearLayout
-							android:id="@+id/buttonPlay"
+							android:id="@+id/btnPlay"
 							android:layout_width="115dp"
 							android:layout_height="48dp"
 							android:background="@drawable/play_bg"
@@ -202,7 +202,7 @@
 						</LinearLayout>
 
 						<ImageView
-							android:id="@+id/buttonDownload"
+							android:id="@+id/btnDownload"
 							android:layout_width="48dp"
 							android:layout_height="48dp"
 							android:contentDescription="@null"
@@ -213,7 +213,7 @@
 							app:tint="@color/orange_color" />
 
 						<ImageView
-							android:id="@+id/buttonShare"
+							android:id="@+id/btnShare"
 							android:layout_width="48dp"
 							android:layout_height="48dp"
 							android:background="@drawable/circle_bg"
@@ -232,7 +232,7 @@
 						android:gravity="center_vertical">
 
 						<com.google.android.material.imageview.ShapeableImageView
-							android:id="@+id/buttonBack"
+							android:id="@+id/btnBack"
 							android:layout_width="40dp"
 							android:layout_height="40dp"
 							android:background="@color/soft_color"
@@ -267,7 +267,7 @@
 							android:layout_weight="1" />
 
 						<ImageView
-							android:id="@+id/buttonFavorite"
+							android:id="@+id/btnFavorite"
 							android:layout_width="40dp"
 							android:layout_height="40dp"
 							android:background="@drawable/favorite_bg"
@@ -301,9 +301,7 @@
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:layout_marginTop="8dp"
-						android:ellipsize="end"
 						android:fontFamily="@font/montserrat_regular"
-						android:maxLines="2"
 						android:textColor="@color/white_grey_color"
 						android:textSize="12sp"
 						tools:text="This is story that talk about the boy can fly" />
@@ -319,6 +317,7 @@
 					android:orientation="vertical">
 
 					<TextView
+						android:id="@+id/tvEpisode"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:fontFamily="@font/montserrat_semi_bold"

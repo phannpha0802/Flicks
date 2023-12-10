@@ -22,7 +22,7 @@ class SplashActivity : AppCompatActivity() {
 
 	private fun splash() {
 		Handler().postDelayed(({
-			startActivity(Intent(this, OnboardActivity::class.java))
+			OnboardActivity.newIntent(this)
 			finish()
 		}), 5000)
 	}
