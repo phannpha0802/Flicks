@@ -40,6 +40,19 @@
 						android:text="Sign In"
 						android:textColor="@color/white_grey_color"
 						android:textSize="18sp" />
+			<TextView
+
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerHorizontal="true"
+				android:layout_centerVertical="true"
+				android:layout_marginHorizontal="12dp"
+				android:ellipsize="end"
+				android:fontFamily="@font/montserrat_semi_bold"
+				android:maxLines="1"
+				android:text="Login"
+				android:textColor="@color/white_color"
+				android:textSize="18sp" />
 
 				</RelativeLayout>
 
@@ -58,6 +71,13 @@
 						android:text="Hi, "
 						android:textColor="@color/white_color"
 						android:textSize="24sp" />
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:fontFamily="@font/montserrat_semi_bold"
+				android:text="Hi, Davide"
+				android:textColor="@color/white_color"
+				android:textSize="24sp" />
 
 					<TextView
 						android:layout_width="wrap_content"
